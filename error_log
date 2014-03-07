@@ -1,0 +1,49 @@
+[15-Dec-2013 20:28:17] PHP Fatal error:  Call to undefined function renderEntitiesList() in /home/dahlgren/public_html/johanmdahlgren.com/cms/core.php(724) : eval()'d code on line 4
+[15-Dec-2013 20:29:25] PHP Warning:  Missing argument 3 for renderEntitiesList(), called in /home/dahlgren/public_html/johanmdahlgren.com/cms/core.php(724) : eval()'d code on line 4 and defined in /home/dahlgren/public_html/johanmdahlgren.com/cms/core.php on line 747
+[15-Dec-2013 21:14:47] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/dahlgren/public_html/johanmdahlgren.com/cms/core.php(755) : eval()'d code on line 2
+[10-Jan-2014 11:53:33] PHP Parse error:  syntax error, unexpected '=' in /home/dahlgren/public_html/johanmdahlgren.com/cms/core.php on line 137
+[10-Jan-2014 11:54:26] PHP Parse error:  syntax error, unexpected ';' in /home/dahlgren/public_html/johanmdahlgren.com/cms/core.php on line 138
+[10-Jan-2014 13:51:57] PHP Fatal error:  Call to undefined function printgetValueFromString() in /home/dahlgren/public_html/johanmdahlgren.com/cms/core.php(762) : eval()'d code on line 9
+[10-Jan-2014 13:57:17] PHP Fatal error:  Call to undefined function xubstr() in /home/dahlgren/public_html/johanmdahlgren.com/cms/core.php(762) : eval()'d code on line 10
+[10-Jan-2014 13:58:51] PHP Fatal error:  Call to undefined function xubstr() in /home/dahlgren/public_html/johanmdahlgren.com/cms/core.php(762) : eval()'d code on line 10
+[11-Jan-2014 14:25:54] PHP Parse error:  syntax error, unexpected T_STRING in /home/dahlgren/public_html/johanmdahlgren.com/cms/core.php on line 44
+[11-Jan-2014 14:46:54] PHP Parse error:  syntax error, unexpected '<' in /home/dahlgren/public_html/johanmdahlgren.com/cms/core.php on line 51
+[11-Jan-2014 14:48:12] PHP Parse error:  syntax error, unexpected '<' in /home/dahlgren/public_html/johanmdahlgren.com/cms/core.php on line 51
+[11-Jan-2014 15:33:00] PHP Parse error:  syntax error, unexpected ')' in /home/dahlgren/public_html/johanmdahlgren.com/cms/core.php on line 44
+[11-Jan-2014 15:49:03] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/dahlgren/public_html/johanmdahlgren.com/cms/core.php on line 41
+[13-Jan-2014 10:39:02] PHP Fatal error:  Call to undefined function cropText() in /home/dahlgren/public_html/johanmdahlgren.com/cms/core.php(818) : eval()'d code on line 10
+[13-Jan-2014 14:47:08] PHP Warning:  require_once(csm/core.php) [<a href='function.require-once'>function.require-once</a>]: failed to open stream: No such file or directory in /home/dahlgren/public_html/johanmdahlgren.com/rss.php on line 3
+[13-Jan-2014 14:47:08] PHP Fatal error:  require_once() [<a href='function.require'>function.require</a>]: Failed opening required 'csm/core.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/dahlgren/public_html/johanmdahlgren.com/rss.php on line 3
+[13-Jan-2014 14:48:01] PHP Warning:  require_once(csm/core.php) [<a href='function.require-once'>function.require-once</a>]: failed to open stream: No such file or directory in /home/dahlgren/public_html/johanmdahlgren.com/rss.php on line 3
+[13-Jan-2014 14:48:01] PHP Fatal error:  require_once() [<a href='function.require'>function.require</a>]: Failed opening required 'csm/core.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/dahlgren/public_html/johanmdahlgren.com/rss.php on line 3
+[13-Jan-2014 14:48:46] PHP Warning:  require_once(csm/core.php) [<a href='function.require-once'>function.require-once</a>]: failed to open stream: No such file or directory in /home/dahlgren/public_html/johanmdahlgren.com/rss.php on line 3
+[13-Jan-2014 14:48:46] PHP Fatal error:  require_once() [<a href='function.require'>function.require</a>]: Failed opening required 'csm/core.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/dahlgren/public_html/johanmdahlgren.com/rss.php on line 3
+[13-Jan-2014 14:49:28] PHP Warning:  Invalid argument supplied for foreach() in /home/dahlgren/public_html/johanmdahlgren.com/rss.php on line 18
+[13-Jan-2014 14:56:06] PHP Warning:  Invalid argument supplied for foreach() in /home/dahlgren/public_html/johanmdahlgren.com/rss.php on line 17
+[13-Jan-2014 14:58:48] PHP Warning:  mysql_fetch_row(): supplied argument is not a valid MySQL result resource in /home/dahlgren/public_html/johanmdahlgren.com/rss.php on line 6
+[13-Jan-2014 15:05:01] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/dahlgren/public_html/johanmdahlgren.com/rss.php on line 35
+[13-Jan-2014 15:05:11] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/dahlgren/public_html/johanmdahlgren.com/rss.php on line 38
+[13-Jan-2014 21:16:06] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/dahlgren/public_html/johanmdahlgren.com/rss.php on line 6
+[17-Jan-2014 11:13:04] PHP Fatal error:  Call to undefined function generateSharingLink() in /home/dahlgren/public_html/johanmdahlgren.com/cms/core.php(825) : eval()'d code on line 24
+[17-Jan-2014 11:13:28] PHP Fatal error:  Call to undefined function generateSharingLinsk() in /home/dahlgren/public_html/johanmdahlgren.com/cms/core.php(825) : eval()'d code on line 24
+[18-Jan-2014 11:21:05] PHP Fatal error:  Call to undefined function generateSharingButtons() in /home/dahlgren/public_html/johanmdahlgren.com/cms/core.php(842) : eval()'d code on line 8
+[18-Jan-2014 11:36:29] PHP Fatal error:  Call to undefined function printgetValueFromString() in /home/dahlgren/public_html/johanmdahlgren.com/cms/core.php(842) : eval()'d code on line 7
+[18-Jan-2014 11:36:43] PHP Parse error:  syntax error, unexpected T_STRING in /home/dahlgren/public_html/johanmdahlgren.com/cms/core.php(842) : eval()'d code on line 7
+[20-Jan-2014 16:39:58] PHP Warning:  Wrong parameter count for substr() in /home/dahlgren/public_html/johanmdahlgren.com/rss.php on line 23
+[20-Jan-2014 16:39:58] PHP Warning:  Wrong parameter count for substr() in /home/dahlgren/public_html/johanmdahlgren.com/rss.php on line 23
+[20-Jan-2014 16:39:58] PHP Warning:  Wrong parameter count for substr() in /home/dahlgren/public_html/johanmdahlgren.com/rss.php on line 23
+[20-Jan-2014 16:39:58] PHP Warning:  Wrong parameter count for substr() in /home/dahlgren/public_html/johanmdahlgren.com/rss.php on line 23
+[20-Jan-2014 16:39:58] PHP Warning:  Wrong parameter count for substr() in /home/dahlgren/public_html/johanmdahlgren.com/rss.php on line 23
+[20-Jan-2014 16:39:58] PHP Warning:  Wrong parameter count for substr() in /home/dahlgren/public_html/johanmdahlgren.com/rss.php on line 23
+[20-Jan-2014 16:39:58] PHP Warning:  Wrong parameter count for substr() in /home/dahlgren/public_html/johanmdahlgren.com/rss.php on line 23
+[20-Jan-2014 16:39:58] PHP Warning:  Wrong parameter count for substr() in /home/dahlgren/public_html/johanmdahlgren.com/rss.php on line 23
+[20-Jan-2014 16:39:58] PHP Warning:  Wrong parameter count for substr() in /home/dahlgren/public_html/johanmdahlgren.com/rss.php on line 23
+[20-Jan-2014 16:42:24] PHP Parse error:  syntax error, unexpected T_LNUMBER in /home/dahlgren/public_html/johanmdahlgren.com/rss.php on line 24
+[20-Jan-2014 16:43:12] PHP Fatal error:  Only variables can be passed by reference in /home/dahlgren/public_html/johanmdahlgren.com/rss.php on line 24
+[21-Jan-2014 13:00:43] PHP Parse error:  syntax error, unexpected ',', expecting '&' or T_VARIABLE in /home/dahlgren/public_html/johanmdahlgren.com/cms/core.php on line 450
+[21-Jan-2014 13:00:50] PHP Parse error:  syntax error, unexpected ',', expecting '&' or T_VARIABLE in /home/dahlgren/public_html/johanmdahlgren.com/cms/core.php on line 450
+[19-Feb-2014 17:18:07] PHP Fatal error:  Call to undefined function col100() in /home/dahlgren/public_html/johanmdahlgren.com/cms/core.php(844) : eval()'d code(142) : eval()'d code on line 11
+[19-Feb-2014 17:18:48] PHP Fatal error:  Call to undefined function col100() in /home/dahlgren/public_html/johanmdahlgren.com/cms/core.php(844) : eval()'d code(142) : eval()'d code on line 11
+[04-Mar-2014 11:05:34] PHP Parse error:  syntax error, unexpected '}' in /home/dahlgren/public_html/johanmdahlgren.com/cms/core.php(861) : eval()'d code on line 13
+[04-Mar-2014 11:06:02] PHP Parse error:  syntax error, unexpected T_CONSTANT_ENCAPSED_STRING in /home/dahlgren/public_html/johanmdahlgren.com/cms/core.php(861) : eval()'d code on line 15
+[04-Mar-2014 13:41:31] PHP Parse error:  syntax error, unexpected ';' in /home/dahlgren/public_html/johanmdahlgren.com/cms/core.php(861) : eval()'d code on line 7

@@ -1,0 +1,169 @@
+* {font-family: arial; color: rgb(120, 120, 120); box-sizing: border-box; -moz-box-sizing:border-box;}
+a, .fakeLink {text-decoration: none; color: rgb(214, 117, 12);}
+a:hover {color: orange;}
+blockquote {font-family: times; font-size: 120%; color: rgb(150, 150, 150); font-style: italic; padding: 0 0 30px 0; position: relative; margin: 0;}
+blockquote:before {content: "\22"; font-size: 400%; line-height: 0px; padding: 29px 15px 0 0; display: block; float: left; margin: 0; font-family: arial;}
+body {width: 100%; height: 100%; font-size: 16px; min-width: 320px; position: relative; padding: 0; margin: 0 0 50px 0; background-attachment: fixed; background-size: cover; background-color: rgb(70, 70, 70);}
+h1 {margin: 0 0 20px 0; font-size: 130%; border-bottom: 2px solid rgb(214, 117, 12)}
+h2, h3 {color: rgb(150, 150, 150); background: none; border: none; padding: 0 0 5px 0; margin: 0 0 10px 0; border-bottom: 2px solid rgb(214, 117, 12); font-weight: normal;}
+h4 {margin: 10px 0;}
+html {width: 100%; height: 100%; }
+img {width: 100%;}
+p {text-align: justify; line-height: 160%; margin: 0;}
+
+#backgroundImage {position: absolute; margin: 0;}
+#canvas {position: fixed;}
+#disqus_thread {clear: both; padding: 20px 0 0 0;}
+#overlay {background-color: rgba(0, 0, 0, 0.5); position: fixed; width: 100%; height: 100%; top: 0; left: 0;}
+#shareDiv {display: none; background-color: rgb(240, 240, 240); width: 80%; height: 200px; position: fixed; top: 0; z-index: 200; border: 1px solid rgb(200, 200, 200); border-radius: 5px; box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);}
+
+.article {padding: 10px 0;}
+.article img {float: left; width: 30%; margin: 0 10px 10px 0;}
+.authorPresentation img {margin-top: 0; margin-bottom: 10px; border: 2px solid black;}
+.authorPresentation h1 {border-top: 1px solid rgb(200, 200, 200); text-align: center; font-size: 18px;}
+.backgroundImageText {position: fixed; bottom: 10px; left: 0; width: 100%; text-align: center; color: rgb(50, 50, 50); text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);}
+.bookCover {float: left; margin: 0 20px 10px 0; width: 35%; overflow: hidden; background-position: center; background-size: cover; border: 2px solid rgb(0, 0, 0);}
+.bookListItem {padding-bottom: 20px; clear: both;}
+.bookPresentation {margin-bottom: 50px;}
+.bookPresentation .bookCover {float: right; margin: 0 0 10px 20px;}
+.changeState {float: right;}
+.clearFix {clear: both;}
+.col25 {width: 32%; float: right; margin: 0 0 0 5%;}
+.col25 h2 {margin: 0 0 10px 0;}
+.col25 .date {display: none;}
+.col75 {width: 63%; float: left;}
+.col100 {width: 90%; margin: 20px auto 0 auto; max-width: 720px;}
+.container {z-index: 200; position: relative;}
+.contentContainer {padding: 0; float: left; margin-bottom: 20px;}
+.contentContainer:first-child h3 {margin-top: 0;}
+.crumbtrail:after {content: " > ";}
+.crumbtrailContainer {min-width: 320px; padding: 10px; z-index: 200; border-bottom: 1px solid rgb(0, 0, 0); margin-bottom: 20px; background-color: rgb(10, 10, 10); color: rgb(214, 117, 12); text-align: center;}
+.entityFlash {position: relative; clear: both; background-size: cover; background-position: center; color: white; width: 100%; height: 250px; text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.75); margin-bottom: 40px;}
+.entityFlash {box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5)}
+.entityFlash.narrowFlash {width: 47.5%; float: left; margin-bottom: 20px; clear: none;}
+.entityFlash:hover {cursor: pointer;}
+.entityFlash h2 {text-align: center; font-size: 150%; font-weight: normal; color: white; float: none; margin: 0; border: none; background: none; border-top: none; width: auto; padding: 0;}
+.entityFlash h3 {text-align: center; clear: left; float: none; margin: 0; padding: 5px 0 0 0; color: rgb(100, 100, 100); border: none; background: none;}
+.entityFlash p {position: absolute; bottom: 10px; right: 20px;}
+.entityFlash .readMore {display: none; background-color: rgba(0, 0, 0, 0.75); width: 100%; text-align: right; padding: 5px 10px; position: absolute; bottom: 0px; left: 0; z-index: 500;}
+.discussionCounter {color: rgb(150, 150, 150);}
+.discussionDiv {background-color: rgb(235, 235, 235); padding: 0 20px; border: 1px solid rgb(200, 200, 200); border-radius: 5px; margin: 40px 0; float: left; width: 100%; box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.35);}
+.fakeLink {float: right;}
+.fb-like {margin-right: 20px;}
+.fb-share-button {margin-right: 30px;}
+.footer-rss {background-image: url("images/rss-icon.png");}
+.footer-facebook {background-image: url("https://www.surveysavvy.com/sites/all/themes/genesis_luth/images/icons/facebook.png");}
+.footer-twitter {background-image: url("http://www.mowt.gov.tt/media/btnTwitter.png");}
+.footer-googlePlus {background-image: url("http://www.cablinginstall.com/content/dam/cim/site-images/new-g-plus-icon-32.png");}
+.footer-pinterest {background-image: url("http://icons.iconarchive.com/icons/position-relative/social-1/32/pinterest-icon.png");}
+.footer {text-align: center; width: 100%; position: relative; z-index: 100; margin-top: 20px;}
+.footer a {width: 20px; height: 20px; margin: 0 10px 0 0; display: inline-block; background-size: cover: background-position: center; background-repeat: no-repeat; background-size: contain;}
+.head {text-align: center; height: 340px; background-position: center; background-size: cover;}
+.head a {color: rgb(240, 240, 240);}
+.head ul li a {color: white;}
+.headerMenuContainer {background-color: rgb(40, 40, 40); z-index: 210; width: 100%; min-width: 320px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); line-height: 40px;  text-align: center;}
+.headerMenuContainer .active a {color: rgb(214, 117, 12);}
+.headerMenuContainer a {color: rgb(200, 200, 200); margin: 0 25px; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);}
+.headerMenuContainer a:hover {color: darkgoldenrod;}
+.headerMenuContainerPlaceHolder {height: 40px; background: black; display: none;}
+.itemList {margin-bottom: 100px; display: table;}
+.itemList a {display: block; float: left; width: 100%;}
+.left {float: left;}
+.links a {background: url("images/external-link-icon.png") left center no-repeat; padding: 0 10px 0 20px; background-size: contain;}
+.main {display: table; position: relative; z-index: 100; padding: 40px 0; width: 90%; max-width: 720px; margin: 40px auto 60px auto;}
+.moreNews {width: 100%; text-align: center; display: block; border-top: 5px solid rgb(114, 88, 60); clear: both; padding-top: 20px;}
+.narrow {max-width: 600px; text-align: justify; margin: 0 auto; background-color: white; padding: 20px 50px;}
+.narrowContainer {padding: 30px 0;}
+.narrowFlashOne {margin-right: 5%;}
+.newsImage {width: 95px; height: 95px; float: left; margin: 0 15px 10px 0; background-size: cover; background-position: center;}
+.newsItem {padding-bottom: 50px;}
+.pageTitle {font-size: 400%; text-shadow: 0 0 10px rgba(0, 0, 0, 0.5), 0px 0px 1px rgb(80, 80, 80); padding-top: 140px; display: inline-block; letter-spacing: 12px;}
+.pageTitleSmall {font-size: 40%; text-shadow: 0 0 1px rgba(255, 255, 255, 0.5), 0 0 10px rgb(255, 255, 255); color: rgb(0, 0, 0); display: block; margin-top: -16px; letter-spacing: 1px; text-align: left; margin-left: 40px;}
+.readMore {display: inline-block; margin-top: 20px;}
+.right {float: right;}
+.sharingDiv {margin: 20px auto 0 auto; display: table;}
+.shortDate {color: rgb(180, 180, 180); float: right; margin-top: -36px;}
+.spotifyTracks iframe {width: 300px; height: 380px; float: left; margin: 0 20px 10px 0; background-color: rgb(100, 100, 100); background-image: url("images/loader.gif"); background-position: center; background-repeat: no-repeat;}
+.spotifyTracks p {text-align: left;}
+.state {border-bottom: 1px solid black; background-color: rgb(0, 99, 0); padding: 10px; box-shadow: 0 2px 20px rgba(0, 0, 0, 0.75); color: white; z-index: 200; position: relative;}
+.status {padding: 10px 0;}
+.sticky {position: fixed; width: 100%; left: 0; top: 0; border-top: 0; line-height: 60px;}
+.sticky .homeIcon {height: 60px;}
+.sticky span a {color: rgb(255, 255, 255);}
+.sticky.crumbtrailContainer {margin-top: 60px; line-height: 100%;}
+.strong {font-weight: bold;}
+.subPageLink {margin: 10px 0; display: block; background-repeat: no-repeat; background-position: left center; padding: 8px 0 8px 40px; background-size: 32px;}
+.subPageLink:last-child {margin-right: 0;}
+.subPageLinksContainer {margin: 0 0 20px 20px; clear: both; float: right; width: 35%; border: 1px solid rgb(220, 220, 220); padding: 0 10px;}
+.testimonials {color: white; padding: 20px 0 80px 0;}
+.testimonial {width: 75%; margin: 0 auto;}
+.testimonial p {font-style: italic;}
+.testimonial .source {float: right; font-style: italic; margin-top: 5px; display: inline-block;}
+.textBlock {margin-top: 20px; background-color: rgb(221, 220, 220); padding: 10px;}
+.textDivider {display: block; width: 50px; height: 60px; margin: 0 auto; background: url("http://www.nothingnewpress.com/wp-content/uploads/2013/05/header-divider.png") left center no-repeat;}
+.titleContainer {background-color: rgba(0, 0, 0, 0.75); width: 100%; float: left; padding: 5px;}
+
+.xx .authorPresentation p:first-letter {font-size: 35px; float: left; border: 1px solid rgb(0, 0, 0); margin-right: 3px; margin-top: 6px; font-weight: bold; background: url("../news/letter.jpeg") center no-repeat; background-size: 32px; width: 35px; height: 35px; text-indent: 6px; line-height: 35px; color: rgb(39, 39, 39); text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);}
+
+@media screen and (max-width: 900px)
+{
+	.pageTitle {letter-spacing: 8px;}
+}
+
+@media screen and (max-width: 700px)
+{
+	h1 {margin: 0 0 20px 0; padding: 10px 20px;}
+
+	#highBackground {display: none;}
+
+	.article {padding: 20px;}
+	.col25 {width: 100%; background-color: rgb(226, 217, 207); border: 1px solid black; border-radius: 5px; -moz-border-radius: 5px;}
+	.col25 img {display: none;}
+	.col25 .contentContainer h1 {margin: 0 0 10px 0; padding-top: 10px; text-align: center;}
+	.col75 {width: 100%;}
+	.col75, .col100.main {background-color: white; border: 1px solid black; border-radius: 0; margin-top: 20px;}
+	.contentContainer {padding: 0;}
+	.contentContainer:first-child h3{border-top: none;}
+	.contentContainer h1 {padding: 20px 0 0 0; margin: 0 0 10px 0;}
+	.crumbtrailContainer {padding: 10px 20px;}
+	.entityFlash {height: 180px; margin-bottom: 20px;}
+	.entityFlash, .col25, .col75 {box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);}
+	.entityFlash h2 {font-size: 120%; font-weight: normal;}
+	.entityFlash h3 {font-size: 100%; font-weight: normal;}
+	.entityFlash h3 {padding: 0;}
+	.discussionToggle {padding: 5px 20px; background-position: 20px center;}
+	.head {height: 180px;}
+	.head, .container {box-shadow: none;}
+	.headerMenuContainer a {margin: 0 15px;}
+	.itemList a:first-child h3 {border-top: none;}
+	.links {padding: 0 20px 20px 20px;}
+	.main {padding: 0; width: 90%; margin-top: 20px; background: none; border: none; box-shadow: none;}
+	.narrow{ box-shadow: none; padding: 0; border: none;}
+	.narrowContainer {padding: 0; background: white;}
+	.pageTitle {font-size: 250%; padding-top: 85px; line-height: 50px; letter-spacing: 8px;}
+	.pageTitleSmall {margin-top: -25px;}
+	.subPageLinksContainer {width: 35%;}
+}
+
+@media screen and (max-width: 500px)
+{
+	body {font-size: 14px;}
+	h1 {text-align: center;}
+	p {text-align: left;}
+	.bookCover {width: 45%; margin: 0 10px 0 0;}
+	.bookPresentation .bookCover {margin: 0 0 10px 10px;}
+	.col25, .col75 {border-radius: 0;}
+	.contentContainer h1 {padding: 10px 0 5px 0;}
+	.entityFlash {border-radius: 0;}
+	.entityFlash h2 {font-size: 120%; font-weight: normal;}
+	.entityFlash h3 {font-size: 100%; font-weight: normal;}
+    .head {height: 120px;}
+	.homeIcon {margin-right: 10px;}
+	.links {padding: 0 10px 10px 10px;}
+	.main {width: 100%;}
+	.newsImage {width: 100px; height: 100px; margin-right: 10px; border: none;}
+	.pageTitle {font-size: 200%; letter-spacing: 2px; padding-top: 50px;}
+	.pageTitleSmall {margin-left: 0; margin-top: -33px; text-shadow: 0 0 1px rgba(255, 255, 255, 0.5), 0 0 5px rgba(255, 255, 255, 0.75);}
+	.spotifyTracks iframe {width: 100%;}
+	.subPageLinksContainer {width: 100%;}
+}
