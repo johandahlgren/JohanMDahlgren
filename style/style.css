@@ -52,7 +52,7 @@ p {line-height: 160%; margin: 0;}
 .crumbtrailContainer {min-width: 320px; z-index: 200; border-bottom: 1px solid rgb(0, 0, 0); background-color: rgb(10, 10, 10); text-align: center; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);}
 .discussionCounter {color: rgb(170, 170, 170); font-weight: bold; display: inline-block;}
 .discussionDiv {background-color: rgb(235, 235, 235); padding: 0 20px; border: 1px solid rgb(200, 200, 200); border-radius: 5px; margin: 40px 0; float: left; width: 100%; box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.35);}
-.entityFlash {border: 1px solid rgb(70, 70, 70); border-radius: 5px; overflow: hidden; min-height: 240px; margin-bottom: 20px; padding: 20px; background-color: rgb(50, 50, 50); box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);}
+.entityFlash {position: relative; border: 1px solid rgb(70, 70, 70); border-radius: 5px; overflow: hidden; min-height: 240px; margin-bottom: 20px; padding: 20px; background-color: rgb(50, 50, 50); box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);}
 .entityFlash.narrowFlash {width: 48.5%; float: left;clear: none;}
 .entityFlash:hover {cursor: pointer; background-color: rgb(55, 55, 55);}
 .entityFlash:hover h2, .entityFlash:hover p {color: rgb(150, 150, 150);}
@@ -61,7 +61,7 @@ p {line-height: 160%; margin: 0;}
 .entityFlash .readMore {display: none; background-color: rgba(0, 0, 0, 0.75); width: 100%; text-align: right; padding: 5px 10px; position: absolute; bottom: 0px; left: 0; z-index: 500;}
 .entityFlash.youTubeFullWidth {height: 335px;}
 .entityFlashImage {width: 103px; height: 104px; float: left; margin: 3px 10px 0 0; box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.5); background-position: center; background-size: cover;}
-.fakeLink {float: right;}
+.fakeLink {position: absolute; right: 20px; bottom: 20px;}
 .footer-rss {background-image: url("images/rss-icon.png");}
 .footer-facebook {background-image: url("https://www.surveysavvy.com/sites/all/themes/genesis_luth/images/icons/facebook.png");}
 .footer-twitter {background-image: url("http://www.mowt.gov.tt/media/btnTwitter.png");}
