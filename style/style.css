@@ -1,4 +1,4 @@
-* {font-family: arial; color: rgb(120, 120, 120); box-sizing: border-box; -moz-box-sizing:border-box;}
+* {font-family: arial; color: rgb(180, 180, 180); box-sizing: border-box; -moz-box-sizing:border-box;}
 ::selection {background-color: rgb(170, 170, 170); color: rgb(214, 117, 12); text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);}
 a {text-decoration: none;}
 .pageContent a, .pageContent .fakeLink {color: rgb(214, 117, 12); text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.75);}
