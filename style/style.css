@@ -96,7 +96,7 @@ p {line-height: 160%; margin: 0;}
 .pageIntro h1 {border: none; margin: 0; padding: 0; color: rgb(120, 120, 120);}
 .pageIntro p {text-align: center; margin: 0; padding: 0; color: rgb(120, 120, 120);}
 .pageIntro .contentContainer {margin: 0;}
-.pageTitle {font-size: 400%; text-shadow: 0 0 10px rgba(0, 0, 0, 0.5), 0px 0px 1px rgb(80, 80, 80); padding-top: 140px; display: inline-block; letter-spacing: 12px;}
+.pageTitle {font-size: 400%; text-shadow: 0 0 10px rgba(0, 0, 0, 0.5), 0px 0px 1px rgb(80, 80, 80); padding-top: 140px; display: inline-block; letter-spacing: 10px;}
 .pageTitleSmall {font-size: 40%; text-shadow: 0 0 1px rgba(255, 255, 255, 0.5), 0 0 10px rgb(255, 255, 255); color: rgb(0, 0, 0); display: block; margin-top: -16px; letter-spacing: 1px; text-align: left; margin-left: 40px;}
 .readMore {display: inline-block; float: right;}
 .right {float: right;}
