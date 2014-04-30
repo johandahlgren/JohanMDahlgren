@@ -1,0 +1,212 @@
+// compress: true, strictMath: true, sourceMap: true
+
+@background-light: rgb(231, 229, 227);
+@background-dark: rgb(209, 205, 197);
+@text-color: rgb(30, 30, 30);
+@title-color: rgb(155, 130, 0);
+@link-color: rgb(185, 126, 0);
+@border-radius: 5px;
+@accent-color: rgb(146, 139, 103);
+
+* {font-family: "Raleway"; color: @text-color; box-sizing: border-box; -moz-box-sizing: border-box;}
+::selection {background-color: rgba(255, 255, 255, 0.3);}
+a {text-decoration: none;}
+.pageContent a, .pageContent .fakeLink {color: @link-color;}
+.pageContent a p {text-shadow: none;}
+.pageContent a:hover, .fakeLink:hover {color: orange;}
+blockquote {font-family: courier; font-size: 120%; color: rgb(155, 130, 0); font-style: italic; padding: 0 0 30px 0; position: relative; margin: 0;}
+blockquote:before {content: "\22"; font-size: 400%; line-height: 0px; padding: 29px 15px 0 0; display: block; float: left; margin: 4px 0 0 0; font-family: arial;}
+body {width: 100%; height: 100%; font-size: 16px; min-width: 320px; position: relative; padding: 0; margin: 0 0 50px 0; background-attachment: fixed; background-size: contain; background-repeat: no-repeat; background-color: rgb(0, 0, 0);}
+h1 {font-family: "Poiret One"; clear: both; text-align: center; color: @title-color; margin: 0 0 20px 0; font-size: 250%; font-weight: normal; border-top: 1px solid @title-color; border-bottom: 1px solid @title-color; padding: 10px 0;}
+h2 {font-family: "Poiret One"; clear: both; color: @title-color; background: none; padding: 5px 0; margin: 40px 0 10px 0; text-align: center; font-weight: normal;}
+h3 {font-family: "Poiret One"; color: @title-color; margin: 0 0 5px 0; font-weight: normal; font-size: 160%;}
+h4 {font-family: "Poiret One"; margin: 10px 0;}
+html {width: 100%; height: 100%; }
+img {width: 100%;}
+p {line-height: 160%; margin: 0;}
+
+#backgroundImage {position: absolute; margin: 0;}
+#canvas {position: fixed;}
+#disqus_thread {clear: both; padding: 20px 0 0 0;}
+#footer {background-color: rgb(20, 20, 20); line-height: 150%; width: 100%; padding: 60px 0 0 0; overflow: hidden; height: 50%; position: fixed; bottom: 0; left: 0; background-size: cover;}
+#footer .bookCover {margin: 0 0 0 20px; width: 120px; height: 160px; border: none; box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);}
+#footer .bottom {bottom: 60px;}
+#headAuthorImage {display: none; width: 130px; box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); margin-right: 20px; margin-bottom: -50px;}
+#overlay {background-color: rgba(0, 0, 0, 0.5); position: fixed; width: 100%; height: 100%; top: 0; left: 0;}
+#shareDiv {display: none; background-color: rgb(240, 240, 240); width: 80%; height: 200px; position: fixed; top: 0; z-index: 200; border: 1px solid rgb(200, 200, 200); border-radius: @border-radius; box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);}
+#socialDiv {position: absolute; z-index: 100; width: 100%;}
+
+.article {padding: 10px 0;}
+.article img {float: left; width: 30%; margin: 0 20px 10px 0;}
+.authorIntro .contentContainer {margin-bottom: 20px;}
+.authorPresentation img {margin-top: 0; margin-bottom: 10px; border: 2px solid black;}
+.authorPresentation h1 {border-top: 1px solid rgb(200, 200, 200); text-align: center; font-size: 18px;}
+.backgroundImageText {position: fixed; bottom: 10px; left: 0; width: 100%; text-align: center; color: rgb(50, 50, 50); text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);}
+.bookCover {float: left; margin: 0 20px 10px 0; width: 35%; overflow: hidden; background-position: center; background-size: cover; border: 1px solid rgb(0, 0, 0);}
+.bookListItem {padding-bottom: 20px; clear: both;}
+.bookPresentation {margin-bottom: 50px;}
+.bookPresentation .bookCover {float: right; margin: 0 0 10px 20px;}
+.bottom {position: absolute; bottom: 0; width: 100%;}
+.by {float: right;}
+.center {display: table; margin: 0 auto;}
+.changeState {float: right;}
+.clearFix {clear: both;}
+.col25 {width: 32%; float: right; margin: 0 0 0 5%;}
+.col25 h2 {margin: 0 0 10px 0;}
+.col25 .date {display: none;}
+.col75 {width: 63%; float: left;}
+.col100 {width: 90%; margin: 0 auto; max-width: 850px;}
+.container {z-index: 200; position: relative; overflow: hidden; margin: 340px 0 300px 0; border-bottom: 10px solid @accent-color; box-shadow: 0 0 20px rgba(0, 0, 0, 0.75);}
+.contentContainer {padding: 0; float: left; width: 100%; margin-bottom: 40px;}
+.contentContainer:first-child h3 {margin-top: 0;}
+.contentFooter {border-top: 1px solid @accent-color; margin-top: 10px; padding-top: 5px;}
+.crumbtrail:after {content: " > ";}
+.crumbtrailContainer {min-width: 320px; z-index: 200; background-color: rgb(151, 174, 197); text-align: center; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);}
+.discussionCounter {color: rgb(0, 0, 0); font-weight: bold; display: inline-block; float: right; margin-right: 20px;}
+.discussionDiv {background-color: rgb(235, 235, 235); padding: 0 20px; border: 1px solid rgb(200, 200, 200); border-radius: @border-radius; margin: 40px 0; float: left; width: 100%; box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.35);}
+.entityFlash {position: relative; overflow: hidden; margin-bottom: 20px; background-color: @background-dark; padding: 20px; border-radius: @border-radius; width: 100%;}
+.entityFlash.narrowFlash {}
+.entityFlash:hover {cursor: pointer;}
+.entityFlash h2 {margin: 0 0 10px 0; border: none; padding: 0; text-align: center; clear: none;}
+.entityFlash h3 {text-align: center; font-size: 100%; font-weight: normal; clear: left; float: none; margin: 0; padding: 5px 0 0 0; color: rgb(100, 100, 100); border: none; background: none;}
+.entityFlash .readMore {display: none; background-color: rgba(0, 0, 0, 0.75); width: 100%; text-align: right; padding: 5px 10px; position: absolute; bottom: 0px; left: 0; z-index: 500;}
+.entityFlash.youTubeFullWidth {height: 335px;}
+.entityFlashImage {width: 103px; height: 104px; float: left; margin: 3px 10px 0 0; box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.5); background-position: center; background-size: cover;}
+.fakeLink {float: right; margin-top: 20px;}
+.footer-rss {background-image: url("images/rss-icon.png");}
+.footer-facebook {background-image: url("https://www.surveysavvy.com/sites/all/themes/genesis_luth/images/icons/facebook.png");}
+.footer-twitter {background-image: url("http://www.mowt.gov.tt/media/btnTwitter.png");}
+.footer-googlePlus {background-image: url("http://www.cablinginstall.com/content/dam/cim/site-images/new-g-plus-icon-32.png");}
+.footer-pinterest {background-image: url("http://icons.iconarchive.com/icons/position-relative/social-1/32/pinterest-icon.png");}
+.head {text-align: center; height: 340px; background-position: center; background-size: cover;}
+.head a {color: rgb(240, 240, 240);}
+.head ul li a {color: white;}
+.headerImage {width: 100%; height: 50%; background-size: cover; position: fixed; background-position: center; top: 0;}
+.headerMenuContainer {background-color: @accent-color; z-index: 210; width: 100%; min-width: 320px; line-height: 40px;  text-align: center;}
+.headerMenuContainer .active a {color: rgb(0, 0, 0);}
+.headerMenuContainer a {color: rgb(250, 250, 250); margin: 0 25px;}
+.headerMenuContainer .crumbtrailContainer a {margin: 0; border-left: none;}
+.headerMenuContainerPlaceHolder {height: 40px; background: black; display: none;}
+.hide {display: none;}
+.imageAltText {display: none;}
+.itemList {margin-bottom: 50px; display: table;}
+.itemList .item {display: block; float: left; width: 100%; margin-bottom: 40px; background-size: cover;}
+.itemTextContainer {position: relative; overflow: hidden;}
+.left {float: left;}
+.links a {background: url("images/external-link-icon.png") left center no-repeat; padding: 0 10px 0 20px; background-size: contain;}
+.main {display: table; position: relative; z-index: 100; width: 90%;}
+.moreNews {width: 100%; text-align: center; display: block; clear: both; padding: 15px 0;}
+.narrow {max-width: 600px; text-align: justify; margin: 0 auto; background-color: white; padding: 20px 50px;}
+.narrow p, .narrow i {color: black;}
+.narrowContainer {padding: 30px 0;}
+.narrowFlash p {text-align: justify; font-size: 80%;}
+.narrowFlashOne {margin-right: 3%;}
+.newsImage {float: left; width: 180px; height: 180px; display: block; box-shadow: inset 2px 2px 8px rgba(0, 0, 0, 0.5); margin: 0 20px 0 0; background-size: cover; background-position: center;}
+.newsImage:hover {cursor: pointer;}
+.newsItem {padding-bottom: 50px;}
+.pageContent {background-color: @background-light; float: left; width: 100%; z-index: 200; position: relative; padding: 60px 0;}
+.pageIntro {width: 90%; margin: 40px auto 20px auto; max-width: 720px; background-color: rgb(40, 40, 40); display: table; padding: 20px; box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5); text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);}
+.pageIntro h1 {border: none; margin: 0; padding: 0; color: rgb(120, 120, 120);}
+.pageIntro p {text-align: center; margin: 0; padding: 0; color: rgb(120, 120, 120);}
+.pageIntro .contentContainer {margin: 0;}
+.pageTitle {font-family: "Poiret One"; font-size: 400%; text-shadow: 0 0 10px rgba(0, 0, 0, 0.5), 0px 0px 1px rgb(80, 80, 80); padding-top: 140px; display: inline-block; letter-spacing: 10px;}
+.pageTitleSmall {font-family: "Poiret One"; font-size: 40%; text-shadow: 0 0 1px rgba(255, 255, 255, 0.5), 0 0 10px rgb(255, 255, 255); color: rgb(0, 0, 0); display: block; margin-top: -16px; letter-spacing: 1px; text-align: left; margin-left: 40px;}
+.readMore {display: inline-block; float: right;}
+.right {float: right;}
+.shareDiv {float: left; position: relative;}
+.shortDate {color: rgb(80, 80, 80); font-size: 70%;}
+.spotifyTracks iframe {width: 300px; height: 380px; float: left; margin: 0 20px 10px 0; background-color: rgb(100, 100, 100); background-image: url("images/loader.gif"); background-position: center; background-repeat: no-repeat;}
+.spotifyTracks p {text-align: left;}
+.state {border-bottom: 1px solid black; background-color: rgb(0, 99, 0); padding: 10px; box-shadow: 0 2px 20px rgba(0, 0, 0, 0.75); color: white; z-index: 200; position: relative;}
+.status {padding: 10px 0;}
+.sticky {position: fixed; width: 100%; left: 0; top: 0; border-top: 0;}
+.sticky .homeIcon {height: 60px;}
+.sticky.crumbtrailContainer {margin-top: 40px;}
+.strong {font-weight: bold;}
+.subH1 {display: block; font-size: 20px;}
+.subPageLink {margin: 10px 0; display: block; background-repeat: no-repeat; background-position: left center; padding: 8px 0 8px 40px; background-size: 32px;}
+.subPageLink:last-child {margin-right: 0;}
+.subPageLinksContainer {float: right; width: 35%; padding: 0 10px; background-color: rgb(155, 130, 0); border-radius: @border-radius;}
+.subPageLinksContainer a {color: white;}
+.testimonials {color: white; padding: 20px 0 60px 0;}
+.testimonial {width: 80%; margin: 0 auto;}
+.testimonial p {font-style: italic;}
+.testimonial .source {float: right; font-style: italic; margin-top: 5px; display: inline-block;}
+.textBlock {margin-top: 20px;}
+.textDivider {display: block; width: 50px; height: 60px; margin: 0 auto; background: url("http://www.nothingnewpress.com/wp-content/uploads/2013/05/header-divider.png") left center no-repeat;}
+.titleContainer {padding: 0 10px; float: left;}
+
+.xx .authorPresentation p:first-letter {font-size: 35px; float: left; border: 1px solid rgb(0, 0, 0); margin-right: 3px; margin-top: 6px; font-weight: bold; background: url("../news/letter.jpeg") center no-repeat; background-size: 32px; width: 35px; height: 35px; text-indent: 6px; line-height: 35px; color: rgb(39, 39, 39); text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);}
+
+/*---------------------*/
+/* Social media styles */
+/*---------------------*/
+
+#___plusone_0 {clear: both; display: block !important;}
+
+#twitter-widget-0 {margin-top: 8px;}
+#twitter-widget-1 {width: 100%; background-color: @background-dark; padding: 20px; border-radius: @border-radius;}
+
+.fb-like {clear: both; width: 100%; margin-bottom: 10px;}
+
+/*-------------------*/
+/* Responsive styles */
+/*-------------------*/
+
+@media screen and (max-width: 900px)
+{
+    #disqus_thread {clear: both; padding: 20px 0 0 0;}
+	.pageTitle {letter-spacing: 8px;}
+}
+
+@media screen and (max-width: 700px)
+{
+	#highBackground {display: none;}
+	#twitter-widget-1 {margin-bottom: 20px;}
+
+	.article {padding: 20px;}
+	.col25 {width: 100%;}
+	.col25 img {display: none;}
+	.col25 .contentContainer h1 {margin: 0 0 10px 0; padding-top: 10px; text-align: center;}
+	.col75 {width: 100%;}
+	.col75, .col100.main {padding: 0 10px;}
+	.container {margin: 180px 0 280px 0;}
+	.contentContainer {padding: 0;}
+	.contentContainer:first-child h3{border-top: none;}
+	.contentContainer h1 {margin: 10px 0;}
+    .discussionToggle {padding: 5px 20px; background-position: 20px center;}
+	.entityFlash h3 {padding: 0;}
+    .entityFlash.narrowFlash {width: 100%; min-height: initial;}
+	.head {height: 200px;}
+	.head, .container {box-shadow: none;}
+	.headerMenuContainer a {margin: 0 15px;}
+    .newsImage {height: 250px;}
+	.main {padding: 0; width: 90%; margin-top: 20px; background: none; border: none; box-shadow: none;}
+	.narrow{ box-shadow: none; padding: 10px 20px; border: none;}
+	.narrowContainer {padding: 0; background: white;}
+	.pageIntro {margin-top: 20px;}
+    .pageTitle {font-size: 250%; padding-top: 100px; line-height: 50px; letter-spacing: 8px;}
+	.pageTitleSmall {margin-top: -25px;}
+	.subPageLinksContainer {width: 35%;}
+    .testimonial {width: 100%;}
+}
+
+@media screen and (max-width: 500px)
+{
+	body {font-size: 14px;}
+    h2 {text-align: center;}
+	.bookCover {width: 45%; margin: 0 10px 0 0;}
+	.bookPresentation .bookCover {margin: 0 0 10px 10px;}
+	.col25, .col75 {border-radius: 0;}
+	.contentContainer h1 {padding: 10px 0 5px 0;}
+    .head {height: 180px;}
+    .headerMenuContainer a {margin: 0 0 0 7px; border-left: 1px solid rgb(80, 80, 80); padding-left: 7px;}
+    .headerMenuContainer span:first-child a {border-left: none; padding-left: 0; margin-left: 0;}
+	.homeIcon {margin-right: 10px;}
+	.main {width: 100%;}
+	.pageContent {padding: 20px 0;}
+	.pageTitle {font-size: 200%; letter-spacing: 2px; padding-top: 70px;}
+	.pageTitleSmall {margin-left: 0; margin-top: -33px; font-weight: bold;}
+	.spotifyTracks iframe {width: 100%;}
+	.subPageLinksContainer {width: 100%; margin-top: 20px;}
+}
