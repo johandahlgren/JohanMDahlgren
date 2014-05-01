@@ -7,6 +7,7 @@
 @link-color: rgb(185, 126, 0);
 @border-radius: 5px;
 @accent-color: rgb(146, 139, 103);
+@light: rgb(192, 184, 163);
 
 * {font-family: "Raleway"; color: @text-color; box-sizing: border-box; -moz-box-sizing: border-box;}
 ::selection {background-color: rgba(255, 255, 255, 0.3);}
@@ -59,9 +60,9 @@ p {line-height: 160%; margin: 0;}
 .container {z-index: 200; position: relative; overflow: hidden; margin: 340px 0 300px 0; border-bottom: 10px solid @accent-color; box-shadow: 0 0 20px rgba(0, 0, 0, 0.75);}
 .contentContainer {padding: 0; float: left; width: 100%; margin-bottom: 40px;}
 .contentContainer:first-child h3 {margin-top: 0;}
-.contentFooter {border-top: 1px solid @accent-color; margin-top: 10px; padding-top: 5px;}
+.contentFooter {border-top: 1px solid @light; margin-top: 10px; padding-top: 5px;}
 .crumbtrail:after {content: " > ";}
-.crumbtrailContainer {min-width: 320px; z-index: 200; background-color: rgb(151, 174, 197); text-align: center; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);}
+.crumbtrailContainer {min-width: 320px; z-index: 200; background-color: @light; text-align: center; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);}
 .discussionCounter {color: rgb(0, 0, 0); font-weight: bold; display: inline-block; float: right; margin-right: 20px;}
 .discussionDiv {background-color: rgb(235, 235, 235); padding: 0 20px; border: 1px solid rgb(200, 200, 200); border-radius: @border-radius; margin: 40px 0; float: left; width: 100%; box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.35);}
 .entityFlash {position: relative; overflow: hidden; margin-bottom: 20px; background-color: @background-dark; padding: 20px; border-radius: @border-radius; width: 100%;}
@@ -96,7 +97,7 @@ p {line-height: 160%; margin: 0;}
 .links a {background: url("images/external-link-icon.png") left center no-repeat; padding: 0 10px 0 20px; background-size: contain;}
 .main {display: table; position: relative; z-index: 100; width: 90%;}
 .moreNews {width: 100%; text-align: center; display: block; clear: both; padding: 15px 0;}
-.narrow {max-width: 600px; text-align: justify; margin: 0 auto; background-color: white; padding: 20px 50px;}
+.narrow {max-width: 600px; text-align: justify; margin: 0 auto;}
 .narrow p, .narrow i {color: black;}
 .narrowContainer {padding: 30px 0;}
 .narrowFlash p {text-align: justify; font-size: 80%;}
@@ -182,8 +183,8 @@ p {line-height: 160%; margin: 0;}
 	.headerMenuContainer a {margin: 0 15px;}
     .newsImage {height: 250px;}
 	.main {padding: 0; width: 90%; margin-top: 20px; background: none; border: none; box-shadow: none;}
-	.narrow{ box-shadow: none; padding: 10px 20px; border: none;}
-	.narrowContainer {padding: 0; background: white;}
+	.narrowContainer {padding: 0;}
+	.pageContent {padding: 40px 0;}
 	.pageIntro {margin-top: 20px;}
     .pageTitle {font-size: 250%; padding-top: 100px; line-height: 50px; letter-spacing: 8px;}
 	.pageTitleSmall {margin-top: -25px;}
