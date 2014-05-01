@@ -90,7 +90,7 @@
 <html lang="en-GB" itemscope itemtype="http://schema.org/Blog">
 	<head>
 	<link href="http://fonts.googleapis.com/css?family=Poiret+One|Raleway" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" type="text/css" href="style/style<?php print $_REQUEST["css"] ?>.min.css?key=<?php print filemtime("style/style.min.css") ?>" media="screen" />
+        <link rel="stylesheet" type="text/css" href="style/style<?php print $_REQUEST["css"] ?>.css?key=<?php print filemtime("style/style.min.css") ?>" media="screen" />
 		<link rel="stylesheet" type="text/css" href="plugins/swipebox/swipebox.css" media="screen" />
 
 		<link rel="canonical" href="<?php print getCurrentUrl() ?>"/>
