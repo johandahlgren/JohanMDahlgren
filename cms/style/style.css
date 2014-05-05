@@ -80,6 +80,7 @@ ul ul ul ul ul ul ul .menuItemIcon {margin-left: 120px;}
 .selectEntity:hover {cursor: pointer;}
 .site .menuItemIcon {background-color: rgb(101, 152, 207);}
 .toggleSystemProperties {float: right; padding: 10px 20px; border: 1px solid rgb(200, 200, 200); border-radius: 5px; background-color: rgb(230, 230, 230); box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);}
+.toggleSystemProperties:hover {cursor: pointer;}
 .systemProperties {display: none;}
 .working div {opacity: 0.25;}
 
