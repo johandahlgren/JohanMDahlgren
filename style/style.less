@@ -18,8 +18,17 @@ a {text-decoration: none;}
 blockquote {font-family: courier; font-size: 120%; color: rgb(155, 130, 0); font-style: italic; padding: 0 0 30px 0; position: relative; margin: 0;}
 blockquote:before {content: "\22"; font-size: 400%; line-height: 0px; padding: 29px 15px 0 0; display: block; float: left; margin: 4px 0 0 0; font-family: arial;}
 body {width: 100%; height: 100%; font-size: 16px; min-width: 320px; position: relative; padding: 0; margin: 0 0 50px 0; background-attachment: fixed; background-size: contain; background-repeat: no-repeat; background-color: rgb(0, 0, 0);}
-h1 {font-family: "Poiret One"; clear: both; text-align: center; color: @title-color; margin: 0 0 40px 0; font-size: 250%; font-weight: normal; border-top: 1px solid @light; border-bottom: 1px solid @light; padding: 10px 0;}
-h2 {font-family: "Poiret One"; clear: both; color: @title-color; background: none; padding: 5px 0; margin: 40px 0 10px 0; border-bottom: 1px solid @light; font-weight: normal;}
+h1 {font-family: "Poiret One"; clear: both; text-align: center; color: @title-color; margin: 0 0 40px 0; font-size: 250%; font-weight: normal; border-top: 1px solid @light; border-bottom: 1px solid @light; padding: 10px 0; box-shadow: 0px 20px 29px -30px rgba(0, 0, 0, 0.5), 0px -22px 20px -30px rgba(0, 0, 0, 0.5);
+    background: -moz-linear-gradient(45deg,  rgba(255,255,255,0) 0%, rgba(255,255,255,0.33) 33%, rgba(255,255,255,0.33) 66%, rgba(255,255,255,0) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,rgba(255,255,255,0)), color-stop(33%,rgba(255,255,255,0.33)), color-stop(66%,rgba(255,255,255,0.33)), color-stop(100%,rgba(255,255,255,0))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(45deg,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.33) 33%,rgba(255,255,255,0.33) 66%,rgba(255,255,255,0) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(45deg,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.33) 33%,rgba(255,255,255,0.33) 66%,rgba(255,255,255,0) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(45deg,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.33) 33%,rgba(255,255,255,0.33) 66%,rgba(255,255,255,0) 100%); /* IE10+ */
+background: linear-gradient(45deg,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.33) 33%,rgba(255,255,255,0.33) 66%,rgba(255,255,255,0) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+}
+h2 {font-family: "Poiret One"; clear: both; color: @title-color; background: none; padding: 5px 0; margin: 40px 0 20px 0; border-bottom: 1px solid @light; font-weight: normal;}
 h3 {font-family: "Poiret One"; color: @title-color; margin: 0 0 5px 0; font-weight: normal; font-size: 160%;}
 h4 {font-family: "Poiret One"; margin: 10px 0;}
 html {width: 100%; height: 100%; }
@@ -29,7 +38,7 @@ p {line-height: 160%; margin: 0;}
 #backgroundImage {position: absolute; margin: 0;}
 #canvas {position: fixed;}
 #disqus_thread {clear: both; padding: 20px 0 0 0;}
-#footer {background-color: rgb(20, 20, 20); line-height: 150%; width: 100%; padding: 60px 0 0 0; overflow: hidden; height: 50%; position: fixed; bottom: 0; left: 0; background-size: cover;}
+#footer {width: 100%; height: 50%; position: fixed; bottom: 0; left: 0; background-size: cover;}
 #footer .bookCover {margin: 0 0 0 20px; width: 120px; height: 160px; border: none; box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);}
 #footer .bottom {bottom: 60px;}
 #headAuthorImage {display: none; width: 130px; box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); margin-right: 20px; margin-bottom: -50px;}
@@ -37,6 +46,9 @@ p {line-height: 160%; margin: 0;}
 #shareDiv {display: none; background-color: rgb(240, 240, 240); width: 80%; height: 200px; position: fixed; top: 0; z-index: 200; border: 1px solid rgb(200, 200, 200); border-radius: @border-radius; box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);}
 #socialDiv {position: absolute; z-index: 100; width: 100%;}
 
+.addThisShare {position: absolute; top: 270px; left: 20px;}
+.addThisFollow {position: absolute; top: 270px; right: 20px;}
+.addThisFollow h3 {text-align: right;}
 .article {padding: 10px 0;}
 .article img {float: left; width: 30%; margin: 0 20px 10px 0;}
 .authorIntro .contentContainer {margin-bottom: 20px;}
@@ -62,9 +74,10 @@ p {line-height: 160%; margin: 0;}
 .contentContainer:first-child h3 {margin-top: 0;}
 .contentFooter {border-top: 1px solid @light; margin-top: 10px; padding-top: 5px;}
 .crumbtrail:after {content: " > ";}
-.crumbtrailContainer {min-width: 320px; z-index: 200; background-color: @light; text-align: center; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);}
 .discussionCounter {color: rgb(0, 0, 0); font-weight: bold; display: inline-block; float: right; margin-right: 20px;}
-.discussionDiv {background-color: rgb(235, 235, 235); padding: 0 20px; border: 1px solid rgb(200, 200, 200); border-radius: @border-radius; margin: 40px 0; float: left; width: 100%; box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.35);}
+.discussionDiv {display: none; background-color: rgb(235, 235, 235); padding: 0 20px; border: 1px solid rgb(200, 200, 200); border-radius: @border-radius; margin: 40px 0; float: left; width: 100%; box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.35);}
+.discussionToggle {clear: both; margin: 20px 0 0 0; background-color: @link-color; float: left; padding: 10px 20px; border-radius: 5px;}
+.discussionToggle:hover {cursor: pointer;}
 .entityFlash {position: relative; overflow: hidden; margin-bottom: 20px; background-color: @background-dark; padding: 20px; border-radius: @border-radius; width: 100%;}
 .entityFlash.narrowFlash {}
 .entityFlash:hover {cursor: pointer;}
@@ -84,11 +97,12 @@ p {line-height: 160%; margin: 0;}
 .head a {color: rgb(240, 240, 240);}
 .head ul li a {color: white;}
 .headerImage {width: 100%; height: 50%; background-size: cover; position: fixed; background-position: center; top: 0;}
-.headerMenuContainer {background-color: @accent-color; z-index: 210; width: 100%; min-width: 320px; text-align: center;}
+.headerMenuContainer {background-color: @accent-color; z-index: 210; width: 100%; min-width: 320px; text-align: center; box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);}
 .headerMenuContainer .active a {color: rgb(0, 0, 0);}
 .headerMenuContainer a {color: rgb(250, 250, 250); padding: 0 25px; line-height: 50px; height: 50px; display: inline-block;}
 .headerMenuContainer a:hover {background-color: darken(@accent-color, 3%);}
-.headerMenuContainer .crumbtrailContainer a {margin: 0; border-left: none;}
+.headerMenuContainer .crumbtrailContainer {min-width: 320px; z-index: 200; background-color: @light; text-align: center; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);}
+.headerMenuContainer .crumbtrailContainer a {line-height: 35px; height: 35px; margin: 0; border-left: none; padding: 0 10px;}
 .headerMenuContainerPlaceHolder {height: 40px; background: black; display: none;}
 .hide {display: none;}
 .imageAltText {display: none;}
@@ -99,7 +113,7 @@ p {line-height: 160%; margin: 0;}
 .links a {background: url("images/external-link-icon.png") left center no-repeat; padding: 0 10px 0 20px; background-size: contain;}
 .main {display: table; position: relative; z-index: 100; width: 90%;}
 .moreNews {width: 100%; text-align: center; display: block; clear: both; padding: 15px 0;}
-.narrow {max-width: 600px; text-align: justify; margin: 0 auto;}
+.narrow {max-width: 520px; text-align: justify; margin: 0 auto;}
 .narrow p, .narrow i {color: black;}
 .narrowContainer {padding: 30px 0;}
 .narrowFlash p {text-align: justify; font-size: 80%;}
@@ -107,7 +121,7 @@ p {line-height: 160%; margin: 0;}
 .newsImage {float: left; width: 180px; height: 180px; display: block; box-shadow: inset 2px 2px 8px rgba(0, 0, 0, 0.5); margin: 0 20px 0 0; background-size: cover; background-position: center;}
 .newsImage:hover {cursor: pointer;}
 .newsItem {padding-bottom: 50px;}
-.pageContent {background-color: @background-light; float: left; width: 100%; z-index: 200; position: relative; padding: 60px 0;}
+.pageContent {background-color: @background-light; float: left; width: 100%; z-index: 200; position: relative; padding: 40px 0;}
 .pageIntro {width: 90%; margin: 40px auto 20px auto; max-width: 720px; background-color: rgb(40, 40, 40); display: table; padding: 20px; box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5); text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);}
 .pageIntro h1 {border: none; margin: 0; padding: 0; color: rgb(120, 120, 120);}
 .pageIntro p {text-align: center; margin: 0; padding: 0; color: rgb(120, 120, 120);}
@@ -117,7 +131,7 @@ p {line-height: 160%; margin: 0;}
 .readMore {display: inline-block; float: right;}
 .right {float: right;}
 .shareDiv {float: left; position: relative;}
-.shortDate {color: rgb(80, 80, 80); font-size: 70%;}
+.shortDate {color: rgb(80, 80, 80);}
 .spotifyTracks iframe {width: 300px; height: 380px; float: left; margin: 0 20px 10px 0; background-color: rgb(100, 100, 100); background-image: url("images/loader.gif"); background-position: center; background-repeat: no-repeat;}
 .spotifyTracks p {text-align: left;}
 .state {border-bottom: 1px solid black; background-color: rgb(0, 99, 0); padding: 10px; box-shadow: 0 2px 20px rgba(0, 0, 0, 0.75); color: white; z-index: 200; position: relative;}
@@ -129,7 +143,7 @@ p {line-height: 160%; margin: 0;}
 .subH1 {display: block; font-size: 20px;}
 .subPageLink {margin: 10px 0; display: block; background-repeat: no-repeat; background-position: left center; padding: 8px 0 8px 40px; background-size: 32px;}
 .subPageLink:last-child {margin-right: 0;}
-.subPageLinksContainer {float: right; width: 35%; padding: 0 10px; background-color: rgb(155, 130, 0); border-radius: @border-radius;}
+.subPageLinksContainer {float: right; width: 35%; padding: 0 10px; background-color: @background-dark; border-radius: @border-radius; clear: right; margin-top: 10px;}
 .subPageLinksContainer a {color: white;}
 .testimonials {color: white; padding: 20px 0 60px 0;}
 .testimonial {width: 80%; margin: 0 auto;}
@@ -167,6 +181,8 @@ p {line-height: 160%; margin: 0;}
 	#highBackground {display: none;}
 	#twitter-widget-1 {margin-bottom: 20px;}
 
+    .addThisShare {top: 110px; left: 10px;}
+    .addThisFollow {top: 110px; right: 10px;}
 	.article {padding: 20px;}
 	.col25 {width: 100%;}
 	.col25 img {display: none;}
