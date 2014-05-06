@@ -7,17 +7,11 @@
 			</a>
 		<?php } ?>
 		<p>
-			<span class="shortDate"><?php print getYMDshort($publishDate) ?> - </span>
 			<?php print formatText(getValueFromString("Text", $data), false) ?>
 		</p>
         <div class="contentFooter">
-            <div class="shareDiv">
-                <div class="fb-share-button" data-href="<?php print getCurrentUrl() ?>" data-type="button_count"></div>
-				<div class="g-plus" data-action="share" data-annotation="bubble" data-href="<?php print getCurrentUrl() ?>"></div>
-            </div>
-            <p class="by">
-                By: <a rel="author" href="http://www.johanmdahlgren.com/index.php?entityId=214">Johan M. Dahlgren</a>
-            </p>
+			<span class="shortDate"><?php print getYMD($publishDate) ?></span>
+        	by <a rel="author" href="http://www.johanmdahlgren.com/index.php?entityId=214">Johan M. Dahlgren</a>
         </div>
 	</div>
 

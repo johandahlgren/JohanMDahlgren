@@ -11,25 +11,23 @@
 
 * {font-family: "Raleway"; color: @text-color; box-sizing: border-box; -moz-box-sizing: border-box;}
 ::selection {background-color: rgba(255, 255, 255, 0.3);}
-a {text-decoration: none;}
-.pageContent a, .pageContent .fakeLink {color: @link-color;}
-.pageContent a p {text-shadow: none;}
-.pageContent a:hover, .fakeLink:hover {color: orange;}
+a, .fakeLink  {text-decoration: none; color: @link-color;}
+a:hover, .fakeLink:hover {color: @accent-color;}
 blockquote {font-family: courier; font-size: 120%; color: rgb(155, 130, 0); font-style: italic; padding: 0 0 30px 0; position: relative; margin: 0;}
 blockquote:before {content: "\22"; font-size: 400%; line-height: 0px; padding: 29px 15px 0 0; display: block; float: left; margin: 4px 0 0 0; font-family: arial;}
 body {width: 100%; height: 100%; font-size: 16px; min-width: 320px; position: relative; padding: 0; margin: 0 0 50px 0; background-attachment: fixed; background-size: contain; background-repeat: no-repeat; background-color: rgb(0, 0, 0);}
-h1 {font-family: "Poiret One"; clear: both; text-align: center; color: @title-color; margin: 0 0 40px 0; font-size: 250%; font-weight: normal; border-top: 1px solid @light; border-bottom: 1px solid @light; padding: 10px 0; box-shadow: 0px 20px 29px -30px rgba(0, 0, 0, 0.5), 0px -22px 20px -30px rgba(0, 0, 0, 0.5);
-    background: -moz-linear-gradient(45deg,  rgba(255,255,255,0) 0%, rgba(255,255,255,0.33) 33%, rgba(255,255,255,0.33) 66%, rgba(255,255,255,0) 100%); /* FF3.6+ */
+h1 {font-family: "Poiret One"; clear: both; text-align: center; color: @title-color; margin: 0 0 30px 0; font-size: 250%; font-weight: normal; border-top: 1px solid @light; border-bottom: 1px solid @light; padding: 10px 0; box-shadow: 0px 20px 29px -30px rgba(0, 0, 0, 0.5), 0px -22px 20px -30px rgba(0, 0, 0, 0.5);
+background: -moz-linear-gradient(45deg,  rgba(255,255,255,0) 0%, rgba(255,255,255,0.33) 33%, rgba(255,255,255,0.33) 66%, rgba(255,255,255,0) 100%); /* FF3.6+ */
 background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,rgba(255,255,255,0)), color-stop(33%,rgba(255,255,255,0.33)), color-stop(66%,rgba(255,255,255,0.33)), color-stop(100%,rgba(255,255,255,0))); /* Chrome,Safari4+ */
 background: -webkit-linear-gradient(45deg,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.33) 33%,rgba(255,255,255,0.33) 66%,rgba(255,255,255,0) 100%); /* Chrome10+,Safari5.1+ */
 background: -o-linear-gradient(45deg,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.33) 33%,rgba(255,255,255,0.33) 66%,rgba(255,255,255,0) 100%); /* Opera 11.10+ */
 background: -ms-linear-gradient(45deg,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.33) 33%,rgba(255,255,255,0.33) 66%,rgba(255,255,255,0) 100%); /* IE10+ */
 background: linear-gradient(45deg,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.33) 33%,rgba(255,255,255,0.33) 66%,rgba(255,255,255,0) 100%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-
 }
 h2 {font-family: "Poiret One"; clear: both; color: @title-color; background: none; padding: 5px 0; margin: 40px 0 20px 0; border-bottom: 1px solid @light; font-weight: normal;}
 h3 {font-family: "Poiret One"; color: @title-color; margin: 0 0 5px 0; font-weight: normal; font-size: 160%;}
+h3 .shortDate {font-size: 80%;}
 h4 {font-family: "Poiret One"; margin: 10px 0;}
 html {width: 100%; height: 100%; }
 img {width: 100%;}
@@ -49,6 +47,8 @@ p {line-height: 160%; margin: 0;}
 .addThisShare {position: absolute; top: 270px; left: 20px;}
 .addThisFollow {position: absolute; top: 270px; right: 20px;}
 .addThisFollow h3 {text-align: right;}
+.addthis_toolbox a span {-webkit-filter: grayscale(100%); -moz-filter: grayscale(100%); filter: grayscale(100%); opacity: 0.75;}
+.addthis_toolbox a:hover span {-webkit-filter: grayscale(0%); -moz-filter: grayscale(0%); filter: grayscale(0%); opacity: 1;}
 .article {padding: 10px 0;}
 .article img {float: left; width: 30%; margin: 0 20px 10px 0;}
 .authorIntro .contentContainer {margin-bottom: 20px;}
@@ -59,8 +59,8 @@ p {line-height: 160%; margin: 0;}
 .bookListItem {padding-bottom: 20px; clear: both;}
 .bookPresentation {margin-bottom: 50px;}
 .bookPresentation .bookCover {float: right; margin: 0 0 10px 20px;}
-.bottom {position: absolute; bottom: 0; width: 100%;}
-.by {float: right;}
+.bottom {position: absolute; bottom: 0; width: 100%; line-height: 180%;}
+.bottom .col100 {color: @light;}
 .center {display: table; margin: 0 auto;}
 .changeState {float: right;}
 .clearFix {clear: both;}
@@ -72,7 +72,17 @@ p {line-height: 160%; margin: 0;}
 .container {z-index: 200; position: relative; overflow: hidden; margin: 340px 0 300px 0; border-bottom: 10px solid @accent-color; box-shadow: 0 0 20px rgba(0, 0, 0, 0.75);}
 .contentContainer {padding: 0; float: left; width: 100%; margin-bottom: 40px;}
 .contentContainer:first-child h3 {margin-top: 0;}
-.contentFooter {border-top: 1px solid @light; margin-top: 10px; padding-top: 5px;}
+.contentFooter {border-top: 1px solid @light; border-bottom: 1px solid @light; margin-top: 30px; height: 35px; line-height: 35px; text-align: center;
+	box-shadow: 0 7px 20px -12px rgba(0,0,0,0.5), 0 -7px 20px -12px rgba(0,0,0,0.5);
+	background: -moz-linear-gradient(45deg,  rgba(255,255,255,0) 0%, rgba(255,255,255,0.33) 33%, rgba(255,255,255,0.33) 66%, rgba(255,255,255,0) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,rgba(255,255,255,0)), color-stop(33%,rgba(255,255,255,0.33)), color-stop(66%,rgba(255,255,255,0.33)), color-stop(100%,rgba(255,255,255,0))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(45deg,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.33) 33%,rgba(255,255,255,0.33) 66%,rgba(255,255,255,0) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(45deg,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.33) 33%,rgba(255,255,255,0.33) 66%,rgba(255,255,255,0) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(45deg,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.33) 33%,rgba(255,255,255,0.33) 66%,rgba(255,255,255,0) 100%); /* IE10+ */
+	background: linear-gradient(45deg,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.33) 33%,rgba(255,255,255,0.33) 66%,rgba(255,255,255,0) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+.contentFooter .shortDate {color: @text-color;}
 .crumbtrail:after {content: " > ";}
 .discussionCounter {color: rgb(0, 0, 0); font-weight: bold; display: inline-block; float: right; margin-right: 20px;}
 .discussionDiv {display: none; background-color: rgb(235, 235, 235); padding: 0 20px; border: 1px solid rgb(200, 200, 200); border-radius: @border-radius; margin: 40px 0; float: left; width: 100%; box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.35);}

@@ -240,11 +240,11 @@
 
 		if ($yearOfEntry < $todaysYear)
 		{
-			$dateString = strftime("%A %e %B %Y", $aDate);
+			$dateString = strftime("%A %B %e %Y", $aDate);
 		}
 		else
 		{
-			$dateString = strftime("%A %e %b", $aDate);
+			$dateString = strftime("%A %B %e", $aDate);
 		}
 
 		return iconv("ISO-8859-1", "UTF-8", $dateString);

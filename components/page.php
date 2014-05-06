@@ -71,15 +71,10 @@
 	$pageEntity 		= getEntity($selectedEntity);
 	$pageData 			= $pageEntity["data"];
 	$backgroundImage 	= getValueFromString("BackgroundImage", $pageData);
-    $footerImage 	    = getValueFromString("FooterImage", $pageData);
 	$imageCredit	 	= getValueFromString("BackgroundImageText", $pageData);
 
 	if ($backgroundImage == "") {
 		$backgroundImage 	= getValueFromString("BackgroundImage", $rootPageData);
-	}
-
-    if ($footerImage == "") {
-		$footerImage 	= getValueFromString("FooterImage", $rootPageData);
 	}
 
 	if ($imageCredit == "") {
@@ -89,8 +84,7 @@
 <!DOCTYPE html>
 <html lang="en-GB" itemscope itemtype="http://schema.org/Blog">
 	<head>
-	<link href="http://fonts.googleapis.com/css?family=Poiret+One|Raleway" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" type="text/css" href="style/style<?php print $_REQUEST["css"] ?>.css?key=<?php print filemtime("style/style.min.css") ?>" media="screen" />
+        <link rel="stylesheet" type="text/css" href="style/style<?php print $_REQUEST["css"] ?>.min.css?key=<?php print filemtime("style/style.min.css") ?>" media="screen" />
 		<link rel="stylesheet" type="text/css" href="plugins/swipebox/swipebox.css" media="screen" />
 
 		<link rel="canonical" href="<?php print getCurrentUrl() ?>"/>
@@ -128,36 +122,14 @@
 		<meta itemprop="image" content="<?php print $image ?>">
 	</head>
 	<body>
-        <div class="headerImage" style="background-image: url(<?php print $backgroundImage ?>);">
-            <!-- AddThis Button BEGIN -->
-                <div class="addThisShare addthis_toolbox addthis_default_style">
-                    <h3>Share</h3>
-                    <a class="addthis_button_preferred_1"></a>
-                    <a class="addthis_button_preferred_2"></a>
-                    <a class="addthis_counter addthis_bubble_style"></a>
-                </div>
-                <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
-                <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-52df9d5a65c61acd"></script>
-            <!-- AddThis Button END -->
-            <!-- AddThis Follow BEGIN -->
-                <div class="addThisFollow addthis_toolbox addthis_default_style">
-                    <h3>Follow</h3>
-                    <a class="addthis_button_facebook_follow" addthis:userid="johanmdahlgren"></a>
-                    <a class="addthis_button_twitter_follow" addthis:userid="johanmdahlgren"></a>
-                    <a class="addthis_button_google_follow" addthis:userid="+johanmdahlgrenauthor"></a>
-                    <a class="addthis_button_rss_follow" addthis:userid="http://www.johanmdahlgren.com/rss.php"></a>
-                </div>
-            <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-52df9d5a65c61acd"></script>
-            <!-- AddThis Follow END -->
-
-            <div class="head">
+        <div class="headerImage" style="background-image: url(<?php print $backgroundImage ?>);"></div>
+		<div class="container">
+			<div class="head">
 				<a href="index.php" class="pageTitle">
 					Johan M. Dahlgren
 					<span class="pageTitleSmall">Aspiring science fiction author</span>
 				</a>
 			</div>
-        </div>
-		<div class="container">
 			<div id="placeholder1" class="headerMenuContainerPlaceHolder"></div>
             <div id="placeholder2" class="headerMenuContainerPlaceHolder"></div>
 			<div class="headerMenuContainer">
@@ -178,37 +150,56 @@
                         eval ("?>" . $templateCode);
                     }
                 ?>
+                 <div id="footer">
+                    <div class="col100">
+                        <div class="right">
+                            <?php
+                                $childPages = getEntities(68, 143);
+                                while (list ($id, $name, $state, $icon, $type, $parentId, $publishDate, $sortOrder, $nodeReference, $code, $listCode, $data) = mysql_fetch_row ($childPages))
+                                {
+                                    $books = getEntities($id, 134);
+
+                                    while (list ($bookId, $bookName, $bookState, $bookIcon, $bookType, $bookParentId, $bookPublishDate, $bookSortOrder, $bookNodeReference, $bookCode, $bookListCode, $bookData) = mysql_fetch_row ($books))
+                                    {
+                                        ?>
+                                            <a href="index.php?entityId=<?php print $id ?>"><img class="bookCover" src="<?php print getValueFromString("SmallCover", $bookData) ?>" alt="Book cover of <?php print $bookName ?>" /></a>
+                                        <?php
+                                    }
+                                }
+                            ?>
+                        </div>
+                        &copy; Johan M. Dahlgren<br/>
+                        <a href="http://www.facebook.com/johanmdahlgren">Facebook page</a><br/>
+                        <a href="https://plus.google.com/+Johanmdahlgrenauthor" rel="author">Google+ page</a><br/>
+                        <a href="http://www.twitter.com/johanmdahlgren">Twitter</a>
+                        <div id="socialDiv">
+                            <div id="fb-root"></div>
+                            <script>(function(d, s, id) {
+                                var js, fjs = d.getElementsByTagName(s)[0];
+                                if (d.getElementById(id)) return;
+                                js = d.createElement(s); js.id = id;
+                                js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+                                fjs.parentNode.insertBefore(js, fjs);
+                            }(document, "script", "facebook-jssdk"));</script>
+                            <div class="fb-like" data-href="http://www.johanmdahlgren.com" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
+
+                            <script type="text/javascript">
+								(function() {
+								var po = document.createElement("script"); po.type = "text/javascript"; po.async = true;
+								po.src = "https://apis.google.com/js/plusone.js";
+								var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(po, s);
+								})();
+							</script>
+                            <div class="g-plusone" data-size="medium" data-href="http://www.johanmdahlgren.com"></div>
+
+                            <a href="https://twitter.com/johanmdahlgren" class="twitter-follow-button" data-show-screen-name="false" data-show-count="true" data-lang="en"></a>
+                            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+						</div>
+                    </div>
                 </div>
             </div>
 			<div class="clearfix"></div>
 		</div>
-
-        <div id="footer" style="background-image: url(<?php print $footerImage ?>);">
-			<div class="bottom">
-				<div class="col100">
-					<div class="right">
-						<?php
-							$childPages = getEntities(68, 143);
-							while (list ($id, $name, $state, $icon, $type, $parentId, $publishDate, $sortOrder, $nodeReference, $code, $listCode, $data) = mysql_fetch_row ($childPages))
-							{
-								$books = getEntities($id, 134);
-
-								while (list ($bookId, $bookName, $bookState, $bookIcon, $bookType, $bookParentId, $bookPublishDate, $bookSortOrder, $bookNodeReference, $bookCode, $bookListCode, $bookData) = mysql_fetch_row ($books))
-								{
-									?>
-										<a href="index.php?entityId=<?php print $id ?>"><img class="bookCover" src="<?php print getValueFromString("SmallCover", $bookData) ?>" alt="Book cover of <?php print $bookName ?>" /></a>
-									<?php
-								}
-							}
-						?>
-					</div>
-					&copy; Johan M. Dahlgren<br/>
-					<a href="http://www.facebook.com/johanmdahlgren">Facebook page</a><br/>
-					<a href="https://plus.google.com/+Johanmdahlgrenauthor" rel="author">Google+ page</a><br/>
-					<a href="http://www.twitter.com/johanmdahlgren">Twitter</a>
-				</div>
-			</div>
-        </div>
 
 		<div class="backgroundImageText"><?php print $imageCredit ?></div>
 
@@ -225,7 +216,7 @@
 					"position" : "left",
 					"services" : "facebook,twitter,google_plusone_share",
 					"offset" : {
-						"top" : "50px"
+						"top" : "250px"
 					}
 				},
 				"follow" : {
