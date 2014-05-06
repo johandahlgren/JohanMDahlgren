@@ -7,20 +7,15 @@
 		<blockquote><?php print getValueFromString("Quote", $data) ?></blockquote>
 	<?php } ?>
 	<?php print formatText(getValueFromString("Text", $data)) ?>
-	<div class="textBlock">
+	<div class="textBlock">	
 		<span class="strong">Status: </span>
 		<?php print getValueFromString("Status", $data) ?>
 	</div>
-
-    <!--
     <div class="contentFooter">
         <div class="shareDiv">
             <div class="fb-share-button" data-href="<?php print getCurrentUrl() ?>" data-type="button_count"></div>
-			<div class="g-plus" data-action="share" data-annotation="bubble" data-href="<?php print getCurrentUrl() ?>"></div>
         </div>
     </div>
-    -->
-    
 	<div class="subPageLinksContainer">
 		<?php
 			$subPages = getEntities($_REQUEST["entityId"], 143);
