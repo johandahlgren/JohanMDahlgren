@@ -44,8 +44,8 @@ p {line-height: 160%; margin: 0;}
 #shareDiv {display: none; background-color: rgb(240, 240, 240); width: 80%; height: 200px; position: fixed; top: 0; z-index: 200; border: 1px solid rgb(200, 200, 200); border-radius: @border-radius; box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);}
 #socialDiv {position: absolute; z-index: 100; width: 100%;}
 
-.addThisShare {position: absolute; top: 270px; left: 20px;}
-.addThisFollow {position: absolute; top: 270px; right: 20px;}
+.addThisShare {position: absolute; top: 250px; left: 20px;}
+.addThisFollow {position: absolute; top: 250px; right: 20px;}
 .addThisFollow h3 {text-align: right;}
 .addthis_toolbox a span {-webkit-filter: grayscale(100%); -moz-filter: grayscale(100%); filter: grayscale(100%); opacity: 0.75;}
 .addthis_toolbox a:hover span {-webkit-filter: grayscale(0%); -moz-filter: grayscale(0%); filter: grayscale(0%); opacity: 1;}
@@ -68,7 +68,7 @@ p {line-height: 160%; margin: 0;}
 .col25 h2 {margin: 0 0 10px 0;}
 .col25 .date {display: none;}
 .col75 {width: 63%; float: left;}
-.col100 {width: 90%; margin: 0 auto; max-width: 850px;}
+.col100 {width: 90%; margin: 0 auto; max-width: 720px;}
 .container {z-index: 200; position: relative; overflow: hidden; margin: 340px 0 300px 0; border-bottom: 10px solid @accent-color; box-shadow: 0 0 20px rgba(0, 0, 0, 0.75);}
 .contentContainer {padding: 0; float: left; width: 100%; margin-bottom: 40px;}
 .contentContainer:first-child h3 {margin-top: 0;}
@@ -90,7 +90,7 @@ p {line-height: 160%; margin: 0;}
 .discussionToggle:hover {cursor: pointer;}
 .entityFlash {position: relative; overflow: hidden; margin-bottom: 20px; background-color: @background-dark; padding: 20px; border-radius: @border-radius; width: 100%;}
 .entityFlash.narrowFlash {}
-.entityFlash:hover {cursor: pointer;}
+.entityFlash:hover {cursor: pointer; background-color: darken(@background-light, 15%);}
 .entityFlash h2 {margin: 0 0 10px 0; border: none; padding: 0; text-align: center; clear: none;}
 .entityFlash h3 {text-align: center; font-size: 100%; font-weight: normal; clear: left; float: none; margin: 0; padding: 5px 0 0 0; color: rgb(100, 100, 100); border: none; background: none;}
 .entityFlash img {margin-bottom: 10px; border: 1px solid rgb(190, 190, 190);}
@@ -107,7 +107,7 @@ p {line-height: 160%; margin: 0;}
 .head a {color: rgb(240, 240, 240);}
 .head ul li a {color: white;}
 .headerImage {width: 100%; height: 50%; background-size: cover; position: fixed; background-position: center; top: 0;}
-.headerMenuContainer {background-color: @accent-color; z-index: 210; width: 100%; min-width: 320px; text-align: center; box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);}
+.headerMenuContainer {background-color: @accent-color; z-index: 210; width: 100%; min-width: 320px; text-align: center; box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); border-top: 1px solid lighten(@accent-color, 25%);}
 .headerMenuContainer .active a {color: rgb(0, 0, 0);}
 .headerMenuContainer a {color: rgb(250, 250, 250); padding: 0 25px; line-height: 50px; height: 50px; display: inline-block;}
 .headerMenuContainer a:hover {background-color: darken(@accent-color, 3%);}
