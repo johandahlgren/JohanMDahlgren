@@ -137,8 +137,9 @@
             <!-- AddThis Button BEGIN -->
                 <div class="addThisShare addthis_toolbox addthis_default_style addthis_32x32_style ">
                     <h3>Share</h3>
-                    <a class="addthis_button_preferred_1"></a>
-                    <a class="addthis_button_preferred_2"></a>
+                    <a class="addthis_button_facebook"></a>
+                    <a class="addthis_button_google_plusone_share"></a>
+                    <a class="addthis_button_twitter"></a>
                     <a class="addthis_counter addthis_bubble_style"></a>
                 </div>
                 <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
@@ -148,8 +149,8 @@
                 <div class="addThisFollow addthis_toolbox addthis_default_style addthis_32x32_style ">
                     <h3>Follow</h3>
                     <a class="addthis_button_facebook_follow" addthis:userid="johanmdahlgren"></a>
-                    <a class="addthis_button_twitter_follow" addthis:userid="johanmdahlgren"></a>
                     <a class="addthis_button_google_follow" addthis:userid="+johanmdahlgrenauthor"></a>
+                    <a class="addthis_button_twitter_follow" addthis:userid="johanmdahlgren"></a>
                     <a class="addthis_button_rss_follow" addthis:userid="http://www.johanmdahlgren.com/rss.php"></a>
                 </div>
             <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-52df9d5a65c61acd"></script>
