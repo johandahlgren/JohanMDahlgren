@@ -68,12 +68,7 @@ $(document).ready(function () {
 		$(".crumbtrailContainer").hide();
 	}
 
-	$(".swipebox").swipebox();
-
-	$(".newsImage").click(function () {
-        console.log("link: " + $(this).parent().find("a.readMore").attr("href"));
-        document.location.href = $(this).parent().find("a.readMore").attr("href");
-	});
+	$(".colorbox").colorbox({rel:"group1", fixed: true});
 
 	$(".shareLink").click(function (e) {
 		e.preventDefault;
