@@ -26,6 +26,7 @@
 			<a class="addthis_button_twitter"></a>
 			<a class="addthis_button_google_plusone_share"></a>
 			<a class="addthis_button_facebook"></a>
+			Share
 		</div>
 	</div>
 </div>

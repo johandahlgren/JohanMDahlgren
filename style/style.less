@@ -126,8 +126,15 @@ p {line-height: 160%; margin: 5px 0;}
 .hide {display: none;}
 .imageAltText {display: none;}
 .item {
-	.addthis_toolbox a {float: right !important; z-index: 1000; position: relative;}
-	.addThisShare {top: initial; position: absolute; left: initial; bottom: -25px; right: 20px; display: inline-block; height: 16px; width: 100px;}
+	.addthis_toolbox {
+		a {
+			float: right !important; z-index: 1000; position: relative;
+			span {opacity: 0.35;}
+			.addthis_button_expanded {opacity: 0.35;}
+		}
+		a.addthis_bubble_style {margin-left: 2px;}
+	}
+	.addThisShare {top: initial; position: absolute; left: initial; bottom: -25px; right: 20px; display: inline-block; height: 16px; width: 150px; color: rgb(170, 170, 170);}
 }
 .itemList {
     margin-bottom: 50px; display: table;
