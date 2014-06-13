@@ -89,8 +89,8 @@
 <!DOCTYPE html>
 <html lang="en-GB" itemscope itemtype="http://schema.org/Blog">
 	<head>
-	<link href="http://fonts.googleapis.com/css?family=Poiret+One|Raleway" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" type="text/css" href="style/style<?php print $_REQUEST["css"] ?>.css?key=<?php print filemtime("style/style.css") ?>" media="screen" />
+        <link href="http://fonts.googleapis.com/css?family=Poiret+One|Raleway" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="style/style<?php print $_REQUEST["css"] ?>.css" media="screen" />
 		<link rel="stylesheet" type="text/css" href="plugins/colorbox/colorbox.css" media="screen" />
 
 		<link rel="canonical" href="<?php print getCurrentUrl() ?>"/>
@@ -189,6 +189,27 @@
         <div class="clearfix"></div>
 
         <div id="footer" style="background-image: url(<?php print $footerImage ?>);">
+            <!-- AddThis Button BEGIN -->
+                <div class="addThisShare addthis_toolbox addthis_default_style addthis_32x32_style ">
+                    <a class="addthis_button_facebook"></a>
+                    <a class="addthis_button_google_plusone_share"></a>
+                    <a class="addthis_button_twitter"></a>
+                    <a class="addthis_counter addthis_bubble_style"></a>
+                    <h3>Share</h3>
+                </div>
+                <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+                <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-52df9d5a65c61acd"></script>
+            <!-- AddThis Button END -->
+            <!-- AddThis Follow BEGIN -->
+                <div class="addThisFollow addthis_toolbox addthis_default_style addthis_32x32_style ">
+                    <a class="addthis_button_facebook_follow" addthis:userid="johanmdahlgren"></a>
+                    <a class="addthis_button_google_follow" addthis:userid="+johanmdahlgrenauthor"></a>
+                    <a class="addthis_button_twitter_follow" addthis:userid="johanmdahlgren"></a>
+                    <a class="addthis_button_rss_follow" addthis:userid="http://www.johanmdahlgren.com/rss.php"></a>
+                    <h3>Follow</h3>
+                </div>
+            <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-52df9d5a65c61acd"></script>
+            <!-- AddThis Follow END -->
 			<div class="bottom">
 				<div class="col100">
 					<div class="right">
