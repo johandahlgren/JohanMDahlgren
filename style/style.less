@@ -31,7 +31,7 @@ h3 .shortDate {font-size: 80%;}
 h4 {font-family: "Poiret One"; margin: 10px 0;}
 html {width: 100%; height: 100%; }
 img {width: 100%;}
-p {line-height: 160%; margin: 0;}
+p {line-height: 160%; margin: 5px 0;}
 
 #backgroundImage {position: absolute; margin: 0;}
 #canvas {position: fixed;}
@@ -40,7 +40,7 @@ p {line-height: 160%; margin: 0;}
     width: 100%; height: 50%; position: fixed; bottom: 0; left: 0; background-size: cover;
     .bookCover {margin: 0 0 0 20px; width: 120px; height: 160px; border: none; box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);}
     .bottom {bottom: 30px;}
-    .addThisShare, .addThisFollow {top: 200px;}
+    .addThisShare, .addThisFollow {top: 180px;}
 }
 #headAuthorImage {display: none; width: 130px; box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); margin-right: 20px; margin-bottom: -50px;}
 #overlay {background-color: rgba(0, 0, 0, 0.5); position: fixed; width: 100%; height: 100%; top: 0; left: 0;}
@@ -50,8 +50,12 @@ p {line-height: 160%; margin: 0;}
 .addThisShare {position: absolute; top: 250px; left: 20px;}
 .addThisFollow {position: absolute; top: 250px; right: 20px;}
 .addThisFollow h3 {text-align: right;}
-.addthis_toolbox a span {-webkit-filter: grayscale(100%); -moz-filter: grayscale(100%); filter: grayscale(100%); opacity: 0.75;}
-.addthis_toolbox a:hover span {-webkit-filter: grayscale(0%); -moz-filter: grayscale(0%); filter: grayscale(0%); opacity: 1;}
+.addthis_toolbox {
+	a {float: left;}
+	a span {-webkit-filter: grayscale(100%); -moz-filter: grayscale(100%); filter: grayscale(100%); opacity: 0.75;}
+	a:hover span {-webkit-filter: grayscale(0%); -moz-filter: grayscale(0%); filter: grayscale(0%); opacity: 1;}
+	.loadingIndicator {width: 16px; height: 16px; position: absolute; background: url("images/loader.gif") center no-repeat; background-size: contain; right: 0; z-index: 900;}
+}
 .article {padding: 10px 0;}
 .article img {float: left; width: 30%; margin: 0 20px 10px 0;}
 .authorIntro .contentContainer {margin-bottom: 20px;}
@@ -121,11 +125,18 @@ p {line-height: 160%; margin: 0;}
 .headerMenuContainerPlaceHolder {height: 40px; background: black; display: none;}
 .hide {display: none;}
 .imageAltText {display: none;}
+.item {
+	.addthis_toolbox a {float: right !important; z-index: 1000; position: relative;}
+	.addThisShare {top: initial; position: absolute; left: initial; bottom: -25px; right: 20px; display: inline-block; height: 16px; width: 100px;}
+}
 .itemList {
     margin-bottom: 50px; display: table;
-    .item {display: block; float: left; width: 100%; margin-bottom: 40px; background-color: rgba(255, 255, 255, 0.25); padding: 20px; border: 1px solid rgba(0, 0, 0, 0.05);}
+    .item {display: block; position: relative; float: left; width: 100%; margin-bottom: 50px; background-color: rgba(255, 255, 255, 0.25); padding: 20px; border: 1px solid rgba(0, 0, 0, 0.05);}
 }
-.itemTextContainer {position: relative;}
+.itemTextContainer {
+	position: relative;
+	.newsImage {margin-bottom: 0;}
+}
 .left {float: left;}
 .links a {background: url("images/external-link-icon.png") left center no-repeat; padding: 0 10px 0 20px; background-size: contain;}
 .main {display: table; position: relative; z-index: 100; width: 90%;}
@@ -135,7 +146,10 @@ p {line-height: 160%; margin: 0;}
 .narrowContainer {padding: 30px 0;}
 .narrowFlash p {text-align: justify; font-size: 80%;}
 .narrowFlashOne {margin-right: 3%;}
-.newsImage {float: left; width: 180px; height: 180px; display: block; margin: 0 20px 0 0; background-size: cover; background-position: center;}
+.newsDetail {display: inline-block; position: absolute; top: -10px; right: -10px; width: 20px; height: 20px; border: 1px solid rgba(0, 0, 0, 0.05); border-radius: 10px; text-align: center; line-height: 15px; color: rgba(0, 0, 0, 0.1); background-color: rgba(0, 0, 0, 0.01);}
+.newsDetail:after {content: ">";}
+.newsDetail:hover {background-color: rgba(0, 0, 0, 0.02);}
+.newsImage {float: left; width: 180px; height: 180px; display: block; margin: 0 20px 20px 0; background-size: cover; background-position: center;}
 .newsImage:hover {cursor: pointer;}
 .newsItem {padding-bottom: 50px;}
 .pageContent {
@@ -151,7 +165,7 @@ p {line-height: 160%; margin: 0;}
 .readMore {display: inline-block; float: right;}
 .right {float: right;}
 .shareDiv {float: left; position: relative;}
-.shortDate {color: rgb(80, 80, 80);}
+.shortDate {color: rgb(170, 170, 170); position: absolute; bottom: -25px; left: 20px;}
 .spotifyTracks iframe {width: 300px; height: 380px; float: left; margin: 0 20px 10px 0; background-color: rgb(100, 100, 100); background-image: url("images/loader.gif"); background-position: center; background-repeat: no-repeat;}
 .spotifyTracks p {text-align: left;}
 .state {border-bottom: 1px solid black; background-color: rgb(0, 99, 0); padding: 10px; box-shadow: 0 2px 20px rgba(0, 0, 0, 0.75); color: white; z-index: 200; position: relative;}
@@ -164,7 +178,6 @@ p {line-height: 160%; margin: 0;}
 .subPageLink {margin: 10px 0; display: block; background-repeat: no-repeat; background-position: left center; padding: 8px 0 8px 40px; background-size: 32px;}
 .subPageLink:last-child {margin-right: 0;}
 .subPageLinksContainer {float: right; width: 35%; padding: 0 10px; background-color: @background-dark; border-radius: @border-radius; clear: right; margin-top: 10px;}
-.subPageLinksContainer a {color: white;}
 .testimonials {color: white; padding: 20px 0 60px 0;}
 .testimonial {width: 80%; margin: 0 auto;}
 .testimonial p {font-style: italic;}

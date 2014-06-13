@@ -126,7 +126,7 @@
 		<meta itemprop="name" content="<?php print $name ?>">
 		<meta itemprop="description" content="<?php print $description ?>">
 		<meta itemprop="image" content="<?php print $image ?>">
-        
+
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
         <script type="text/javascript">var pageEntityId = <?php print $selectedEntity ?>;</script>
 		<script src="js/main.min.js"></script>
@@ -136,7 +136,7 @@
         <div class="headerImage" style="background-image: url(<?php print $backgroundImage ?>);">
             <!-- AddThis Button BEGIN -->
                 <div class="addThisShare addthis_toolbox addthis_default_style addthis_32x32_style ">
-                    <h3>Share</h3>
+                    <h3>Share this page</h3>
                     <a class="addthis_button_facebook"></a>
                     <a class="addthis_button_google_plusone_share"></a>
                     <a class="addthis_button_twitter"></a>
@@ -168,7 +168,7 @@
             <div id="placeholder2" class="headerMenuContainerPlaceHolder"></div>
 			<div class="headerMenuContainer">
 				<span class="<?php if($selectedEntity == 116 || $selectedEntity == "") {print("active");} ?>">
-					<a href="index.php">Home</a>
+					<a href="http://www.johanmdahlgren.com">Home</a>
 				</span>
 				<?php
 					renderMenu(116);
@@ -189,13 +189,14 @@
         <div class="clearfix"></div>
 
         <div id="footer" style="background-image: url(<?php print $footerImage ?>);">
+			<div class="addthis_sharing_toolbox"></div>
             <!-- AddThis Button BEGIN -->
                 <div class="addThisShare addthis_toolbox addthis_default_style addthis_32x32_style ">
                     <a class="addthis_button_facebook"></a>
                     <a class="addthis_button_google_plusone_share"></a>
                     <a class="addthis_button_twitter"></a>
                     <a class="addthis_counter addthis_bubble_style"></a>
-                    <h3>Share</h3>
+                    <h3>Share this page</h3>
                 </div>
                 <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
                 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-52df9d5a65c61acd"></script>
