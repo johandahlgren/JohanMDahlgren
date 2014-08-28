@@ -9,21 +9,15 @@ var topMenuSelection;
 $(document).ready(function () {
 	$("li.active").parents("li").addClass("active");
 
-	var stickyNavTop = $(".headerMenuContainer").offset().top;
+	var stickyNavTop = $("#topMenu").offset().top;
 
 	var stickyNav = function(){
 		var scrollTop = $(window).scrollTop();
 
 		if (scrollTop > stickyNavTop) {
-			$(".headerMenuContainer").addClass("sticky");
-			$("#placeholder1").show();
-            if ($(".crumbtrailContainer").children("a").length > 0) {
-                $("#placeholder2").show();
-            }
+			$("#topMenu").addClass("sticky");
 		} else {
-			$(".headerMenuContainer").removeClass("sticky");
-			$("#placeholder1").hide();
-            $("#placeholder2").hide();
+			$("#topMenu").removeClass("sticky");
 		}
 	};
 
@@ -86,11 +80,11 @@ $(document).ready(function () {
 	} else {
 		useCanvasBackground = false;
 	}
-    
+
     if (topMenuSelection != "") {
         $(topMenuSelection).addClass("active");
     }
-    
+
    	getNumberOfPosts();
 
 });

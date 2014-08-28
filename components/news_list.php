@@ -1,16 +1,7 @@
-<div class="item">
-    <h3>
-        <span class="shortDate"><?php print getYMDshort($publishDate) ?> -</span>
-        <?php print $name ?>
-    </h3>
-    <?php if (getValueFromString("Image", $data) !="" ) { ?>
-        <span id="news-<?php print $id ?>" class="newsImage" style="background-image: url(<?php print getValueFromString("Image", $data) ?>);"></span>
-    <?php } ?>
+<div class="block">
+    <div class="divider"></div><div class="date"><?php print getYMDshort($publishDate) ?></div><div class="divider"></div>
+    <h2><?php print $name ?></h2>
     <p>
-        <?php print cropText(strip_tags(formatText(getValueFromString( "Text", $data))), 250); ?>
+        <?php print formatText(getValueFromString( "Text", $data)); ?>
     </p>
-    <div class="contentFooter">
-        <span class="discussionCounter" data-id="<?php print $id ?>"></span>
-        <a href="index.php?entityId=<?php print $aDetailPage?>&amp;subEntityId=<?php print $id ?>" class="readMore">Read&nbsp;more&nbsp;&raquo;</a>
-    </div>
 </div>

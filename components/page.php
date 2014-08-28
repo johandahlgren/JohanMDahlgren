@@ -71,25 +71,11 @@ $headAuthorImage 	= getValueFromString("AuthorImage", $rootPageData);
 $pageEntity 		= getEntity($selectedEntity);
 $pageData 			= $pageEntity["data"];
 $backgroundImage 	= getValueFromString("BackgroundImage", $pageData);
-$footerImage 	    = getValueFromString("FooterImage", $pageData);
-$imageCredit	 	= getValueFromString("BackgroundImageText", $pageData);
-
-if ($backgroundImage == "") {
-    $backgroundImage 	= getValueFromString("BackgroundImage", $rootPageData);
-}
-
-if ($footerImage == "") {
-    $footerImage 	= getValueFromString("FooterImage", $rootPageData);
-}
-
-if ($imageCredit == "") {
-    $imageCredit 	= getValueFromString("BackgroundImageText", $rootPageData);
-}
 ?>
 <!DOCTYPE html>
 <html lang="en-GB" itemscope itemtype="http://schema.org/Blog">
     <head>
-        <link href="http://fonts.googleapis.com/css?family=Poiret+One|Raleway" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=Libre+Baskerville|Roboto:300" rel="stylesheet" type="text/css">
         <link rel="stylesheet" type="text/css" href="style/style<?php print $_REQUEST["css"] ?>.css" media="screen" />
         <link rel="stylesheet" type="text/css" href="plugins/colorbox/colorbox.css" media="screen" />
 
@@ -102,16 +88,16 @@ if ($imageCredit == "") {
         <meta name="mobile-web-app-capable" content="yes">
 
         <?php
-    if ($_REQUEST["subEntityId"] != "") {
-    $subEntity 	    = getEntity($_REQUEST["subEntityId"]);
-    $name 		    = $subEntity["name"];
-    $pageTitle 	    = $name;
-    $description    = strip_tags(formatText(getValueFromString("Text", $subEntity["data"])));
-    $image          = getValueFromString("Image", $subEntity["data"]);
-} else {
-    $pageTitle      = $pageEntity["name"];
-    $image          = $backgroundImage;
-}
+            if ($_REQUEST["subEntityId"] != "") {
+                $subEntity 	    = getEntity($_REQUEST["subEntityId"]);
+                $name 		    = $subEntity["name"];
+                $pageTitle 	    = $name;
+                $description    = strip_tags(formatText(getValueFromString("Text", $subEntity["data"])));
+                $image          = getValueFromString("Image", $subEntity["data"]);
+            } else {
+                $pageTitle      = $pageEntity["name"];
+                $image          = $backgroundImage;
+            }
         ?>
 
         <title><?php print $pageTitle ?> | Johan M. Dahlgren</title>
@@ -133,76 +119,31 @@ if ($imageCredit == "") {
         <script src="plugins/colorbox/colorbox.min.js"></script>
     </head>
     <body>
-        <div class="headerImage" style="background-image: url(<?php print $backgroundImage ?>);">
-            <div class="head">
-                <a href="http://www.johanmdahlgren.com" class="pageTitle">
-                    Johan M. Dahlgren
-                    <span class="pageTitleSmall">Aspiring science fiction author</span>
-                </a>
-            </div>
+        <div id="header" style="background-image: url(<?php print $backgroundImage ?>);">
+            <a href="http://www.johanmdahlgren.com" class="pageTitle">
+                Johan M. Dahlgren
+                <span class="pageTitleSmall">Aspiring science fiction author</span>
+            </a>
         </div>
-        <div class="container">
-            <div id="placeholder1" class="headerMenuContainerPlaceHolder"></div>
-            <div id="placeholder2" class="headerMenuContainerPlaceHolder"></div>
-            <div class="headerMenuContainer">
-                <span class="<?php if($selectedEntity == 116 || $selectedEntity == "") {print("active");} ?>">
-                    <a href="http://www.johanmdahlgren.com">Home</a>
-                </span>
+        <div id="content">
+            <div id="topMenu">
+                <a href="http://www.johanmdahlgren.com" class="<?php if($selectedEntity == 116 || $selectedEntity == "") {print("active");} ?>">Home</a>
                 <?php
                     renderMenu(116);
                     renderCrumbtrail($selectedEntity, true);
                 ?>
             </div>
-            <div class="pageContent">
+            <div id="container">
                 <?php
-$template = getEntity(getValueFromString("Template", $pageData));
-$templateCode = $template["code"];
+                    $template = getEntity(getValueFromString("Template", $pageData));
+                    $templateCode = $template["code"];
 
-if ($templateCode != "") {
-    eval ("?>" . $templateCode);
-}
+                    if ($templateCode != "") {
+                        eval ("?>" . $templateCode);
+                    }
                 ?>
             </div>
         </div>
-        <div class="clearfix"></div>
-
-        <div id="footer" style="background-image: url(<?php print $footerImage ?>);">
-            <div class="bottom">
-                <div class="col100">
-                    <!-- AddThis Follow BEGIN -->
-                    <div class="addThisFollow addthis_toolbox addthis_default_style addthis_32x32_style ">
-                        <a class="addthis_button_facebook_follow" addthis:userid="johanmdahlgren"></a>
-                        <a class="addthis_button_google_follow" addthis:userid="+johanmdahlgrenauthor"></a>
-                        <a class="addthis_button_twitter_follow" addthis:userid="johanmdahlgren"></a>
-                        <a class="addthis_button_rss_follow" addthis:userid="http://www.johanmdahlgren.com/rss.php"></a>
-                    </div>
-                    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-52df9d5a65c61acd"></script>
-                    <!-- AddThis Follow END -->
-                    <div class="right">
-                        <?php
-                            $childPages = getEntities(68, 143);
-                            while (list ($id, $name, $state, $icon, $type, $parentId, $publishDate, $sortOrder, $nodeReference, $code, $listCode, $data) = mysql_fetch_row ($childPages))
-                            {
-                                $books = getEntities($id, 134);
-
-                                while (list ($bookId, $bookName, $bookState, $bookIcon, $bookType, $bookParentId, $bookPublishDate, $bookSortOrder, $bookNodeReference, $bookCode, $bookListCode, $bookData) = mysql_fetch_row ($books))
-                                {
-                                                    ?>
-                                                    <a href="index.php?entityId=<?php print $id ?>"><img class="bookCover" src="<?php print getValueFromString("SmallCover", $bookData) ?>" alt="Book cover of <?php print $bookName ?>" /></a>
-                                                    <?php
-                                }
-                            }
-                        ?>
-                    </div>
-                    &copy; Johan M. Dahlgren<br/>
-                    <a href="http://www.facebook.com/johanmdahlgren">Facebook page</a><br/>
-                    <a href="https://plus.google.com/+Johanmdahlgrenauthor" rel="author">Google+ page</a><br/>
-                    <a href="http://www.twitter.com/johanmdahlgren">Twitter</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="backgroundImageText"><?php print $imageCredit ?></div>
 
         <?php if ($_SESSION["loggedIn"] != true) { ?>
         <script type="text/javascript">
