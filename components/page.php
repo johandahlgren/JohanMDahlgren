@@ -5,11 +5,9 @@ function renderMenu ($aParentId) {
     $pages = getEntities($aParentId, 143);
     while (list ($id, $name, $state, $icon, $type, $parentId, $publishDate, $sortOrder, $nodeReference, $data) = mysql_fetch_row ($pages))
     {
-?>
-<span id="menu_<?php print $id ?>" class="<?php if($id == $_REQUEST["entityId"]) {print("active");} ?>">
-    <a href="index.php?entityId=<?php print $id ?>"><?php print $name ?></a>
-</span>
-<?php
+		?>
+			<a href="index.php?entityId=<?php print $id ?>" class="<?php if($id == $_REQUEST["entityId"]) {print("active");} ?>"><?php print $name ?></a>
+		<?php
     }
 }
 
@@ -120,9 +118,9 @@ $backgroundImage 	= getValueFromString("BackgroundImage", $pageData);
     </head>
     <body>
         <div id="header" style="background-image: url(<?php print $backgroundImage ?>);">
-            <a href="http://www.johanmdahlgren.com" class="pageTitle">
+            <a href="http://www.johanmdahlgren.com" id="pageTitle">
                 Johan M. Dahlgren
-                <span class="pageTitleSmall">Aspiring science fiction author</span>
+                <span id="pageTitleSmall">Aspiring science fiction author</span>
             </a>
         </div>
         <div id="content">
