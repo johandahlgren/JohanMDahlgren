@@ -62,8 +62,6 @@ $(document).ready(function () {
 		$(".crumbtrailContainer").hide();
 	}
 
-	$(".colorbox").colorbox({rel:"group1", fixed: true});
-
 	$(".shareLink").click(function (e) {
 		e.preventDefault;
 		$("#overlay").show();
