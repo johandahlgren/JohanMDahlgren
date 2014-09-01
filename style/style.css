@@ -53,10 +53,6 @@ p img, .bookCover {float: left; margin-right: 20px; height: 250px; box-shadow: 2
 .subPageLink:hover {background-color: rgb(40, 40, 40);}
 .textDivider {display: block; height: 100px; content: "AAA"; background: url("images/divider.png") center no-repeat; background-size: 50%;}
 
-@media screen and (min-width: 921px) {
-    @import url("http://fonts.googleapis.com/css?family=Libre+Baskerville|Roboto:300");
-}
-
 @media screen and (max-width: 920px){
 	h2{font-size: 40px}
 
