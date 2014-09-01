@@ -34,9 +34,10 @@ p img, .bookCover {float: left; margin-right: 20px; height: 250px; box-shadow: 2
 .block {clear: both; margin-top: 200px}
 .block:first-child {margin-top: 0}
 .block:first-child h2 {font-size: 80px; line-height: 80px; margin-bottom: 40px; padding-bottom: 20px}
+.center {margin: 0 auto; display: table;}
 .date {display: inline-block; width: 20%; vertical-align: top; text-align: center; font-weight: bold}
 .divider{width: 40%; height: 3px; display: inline-block; border-bottom: 4px double white; vertical-align: top; margin-top: 6px}
-.entityFlash {opacity: 0.8; position: relative; width: 180px; height: 260px; background-color: rgb(100, 100, 100); border-radius: 5px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.75); background-size: cover; background-position: center; margin: 0 10px 140px 10px; float: left;}
+.entityFlash {opacity: 0.8; position: relative; width: 160px; height: 220px; background-color: rgb(100, 100, 100); border-radius: 5px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.75); background-size: cover; background-position: center; margin: 0 10px 140px 10px; display: inline-block;}
 .entityFlash:hover {opacity: 1;}
 .entityFlash h2 {font-family: "Roboto"; font-size: 15px; text-shadow: none; border: none; padding: 10px; position: absolute; height: 50px; bottom: -60px; margin: 0; width: 100%; text-align: center; box-sizing: border-box;}
 .itemList h2 {border-top: none; margin-top: -10px}
