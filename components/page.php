@@ -73,8 +73,9 @@ $backgroundImage 	= getValueFromString("BackgroundImage", $pageData);
 <!DOCTYPE html>
 <html lang="en-GB" itemscope itemtype="http://schema.org/Blog">
     <head>
-        <link href="http://fonts.googleapis.com/css?family=Libre+Baskerville|Roboto:300&effect=decaying" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" type="text/css" href="style/style<?php print $_REQUEST["css"] ?>.min.css" media="screen" />
+        <link href="http://fonts.googleapis.com/css?family=Libre+Baskerville|Roboto:300" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="style/style<?php print $_REQUEST["css"] ?>.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="plugins/colorbox/colorbox.css" media="screen" />
 
         <link rel="canonical" href="<?php print getCurrentUrl() ?>"/>
         <link rel="icon" type="image/png" href="style/images/favicon.png" />
@@ -113,11 +114,12 @@ $backgroundImage 	= getValueFromString("BackgroundImage", $pageData);
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
         <script type="text/javascript">var pageEntityId = <?php print $selectedEntity ?>;</script>
         <script src="js/main.min.js"></script>
+        <script src="plugins/colorbox/colorbox.min.js"></script>
     </head>
     <body>
         <div id="stamp"></div>
         <div id="header">
-            <a href="http://www.johanmdahlgren.com" id="pageTitle" class="font-effect-decaying">
+            <a href="http://www.johanmdahlgren.com" id="pageTitle">
                 Johan M. Dahlgren
                 <span id="pageTitleSmall">Aspiring science fiction author</span>
             </a>
