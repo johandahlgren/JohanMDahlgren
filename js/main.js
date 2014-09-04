@@ -120,3 +120,15 @@ function getNumberOfPosts() {
 		});
 	});
 }
+
+function onYouTubePlayerAPIReady() {
+    player = new YT.Player('video_chromeless', {
+        height: '800',
+        width: '450',
+        videoId: '',
+        events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+        }
+    });
+}

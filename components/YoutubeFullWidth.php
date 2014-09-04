@@ -1,0 +1,1 @@
+<iframe class="youtubeFullWidth" width="100%" height="100%" src="//www.youtube.com/embed/<?php print getValueFromString("VideoId", $data); ?>?autoplay=0&showinfo=0&controls=0&rel=0&modestbranding=1" frameborder="0" allowfullscreen></iframe>

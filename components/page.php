@@ -111,43 +111,44 @@ $backgroundImage 	= getValueFromString("BackgroundImage", $pageData);
         <meta itemprop="image" content="<?php print $image ?>">
 
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+        <script src="http://www.youtube.com/player_api?enablejsapi=1&version=3"></script>
         <script>var pageEntityId = <?php print $selectedEntity ?>;</script>
         <script src="js/main.min.js"></script>
-		<!--[if IE]>
-			<style>
-				.ieOnly {display: block;}
-			</style>
-		<![endif]-->
+        <!--[if IE]>
+<style>
+.ieOnly {display: block;}
+</style>
+<![endif]-->
     </head>
     <body>
-		<div class="ieOnly">
-			Please do not use older versions of Internet Explorer. At all. Ever.<br/>
-			Upgrade to the latest version or better yet, <a href="https://www.google.com/chrome/browser/">download Chrome</a>.
-		</div>
-		<div id="overlay"></div>
+        <div class="ieOnly">
+            Please do not use older versions of Internet Explorer. At all. Ever.<br/>
+            Upgrade to the latest version or better yet, <a href="https://www.google.com/chrome/browser/">download Chrome</a>.
+        </div>
+        <div id="overlay"></div>
         <header>
             <a href="http://www.johanmdahlgren.com" id="pageTitle" class="font-effect-decaying">
                 Johan M. Dahlgren
                 <span id="pageTitleSmall">Aspiring science fiction author</span>
             </a>
         </header>
-		<nav id="topMenu">
-			<a href="http://www.johanmdahlgren.com" class="<?php if($selectedEntity == 116 || $selectedEntity == "") {print("active");} ?>">Home</a>
-			<?php
-				renderMenu(116);
-				renderCrumbtrail($selectedEntity, true);
-			?>
-		</nav>
-		<div id="container">
-			<?php
-				$template = getEntity(getValueFromString("Template", $pageData));
-				$templateCode = $template["code"];
+        <nav id="topMenu">
+            <a href="http://www.johanmdahlgren.com" class="<?php if($selectedEntity == 116 || $selectedEntity == "") {print("active");} ?>">Home</a>
+            <?php
+renderMenu(116);
+renderCrumbtrail($selectedEntity, true);
+            ?>
+        </nav>
+        <div id="container">
+            <?php
+$template = getEntity(getValueFromString("Template", $pageData));
+$templateCode = $template["code"];
 
-				if ($templateCode != "") {
-					eval ("?>" . $templateCode);
-				}
-			?>
-		</div>
+if ($templateCode != "") {
+    eval ("?>" . $templateCode);
+}
+            ?>
+        </div>
 
         <?php if ($_SESSION["loggedIn"] != true) { ?>
         <script type="text/javascript">
