@@ -13,6 +13,7 @@ h2:first-child {margin-top: 0}
 h3 {font-size: 20px;}
 header {height: 250px; background-color: rgb(30, 30, 30); background: url("images/grunge.jpg") center;}
 html {width: 100%; height: 100%}
+input, textarea {outline: none;}
 iframe {margin: 40px 0; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.75); border: 1px solid rgb(50, 50, 50); background-color: rgb(20, 20, 20); }
 p {margin: 0; line-height: 24px;}
 p a{color: #ffca99; border-bottom: 1px solid #ff8500}
@@ -31,7 +32,8 @@ section h2 {border-top: none; margin-top: -10px}
 #pageTitleSmall {font-size: 25px; font-family: "Roboto", "arial"; color: rgb(130, 130, 130); display: block; margin: -20px 0 0 -170px; text-shadow: none;}
 #topMenu {width: 100%; background-color: rgb(25, 25, 25); text-align: center; box-shadow: 0 0 100px rgba(0, 0, 0, 1); z-index: 100;}
 #topMenu.sticky {position: fixed; top: 0}
-#topMenu a {color: white; margin: 0 70px; line-height: 50px}
+#topMenu a {color: rgb(160, 160, 160); margin: 0 70px; line-height: 50px}
+#topMenu a:hover {color: rgb(255, 255, 255);}
 #topMenu a.active {color: #ff7a00}
 
 .asset {width: 100px; height: 100px; background-color: #4b4b4b; background-size: contain; background-position: center; margin: 0 40px 20px 0; display: inline-block; box-shadow: 2px 2px 5px rgba(0,0,0,0.5); border-radius: 50px; -webkit-filter: grayscale(80%)}
@@ -51,7 +53,7 @@ section h2 {border-top: none; margin-top: -10px}
 .entityFlash h2 {font-family: "Roboto"; font-size: 16px; text-shadow: none; border: none; padding: 10px; position: absolute; height: 50px; bottom: -60px; margin: 0; width: 100%; text-align: center; box-sizing: border-box;}
 .ieOnly {display: none; background-color: red; text-align: center; padding: 10px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.75); font-weight: bold; border: 5px solid rgb(200, 0, 0);}
 .ieOnly a {color: black;}
-.insertComment {display: none; margin-top: 20px;}
+.insertComment {display: none; margin-top: 20px; background-color: rgba(100, 100, 100, 0.2); padding: 0 20px; border-radius: 5px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.75);}
 .insertComment label {display: inline-block; padding: 10px 0 5px 0;}
 .insertComment input, .insertComment textarea {width: 100%; background-color: rgba(100, 100, 100, 0.3); border: 2px solid rgba(100, 100, 100, 0.4); border-radius: 5px; padding: 10px 20px; color: rgb(255, 255, 255); font-size: 16px;}
 .insertComment textarea {height: 100px;}
@@ -100,13 +102,13 @@ section h2 {border-top: none; margin-top: -10px}
     #container > blockquote {margin: 40px auto 80px auto;}
     #container > iframe.youtubeFullWidth {height: 158px;}
     #content {top: 150px; background: rgb(40, 40, 40); background-blend-mode: normal;}
-	#moreNews {margin-top: 20px;}
     #pageTitle {font-family: serif; font-size: 35px; padding-top: 40px;}
 	#pageTitleSmall {display: none;}
 	#topMenu a {margin: 0 15px;}
 
     .block {margin-top: 100px;}
+    .button {width: 100%;}
     .entityFlash {display: none;}
 	.font-effect-decaying {-webkit-mask-image: none;}
-	.pageTitle{}
+    .subPageLink {width: 100%; margin: 10px 0; height: 60px; background-position: 20px center; line-height: 60px; padding-top: 0;}
 }
