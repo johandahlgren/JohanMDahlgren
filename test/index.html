@@ -1,0 +1,160 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Testsida</title>
+	<style type="text/css">
+        body {color: white; font-family: verdana; font-size: 14px; margin: 0; height: 100%; width: 100%;}
+		h2 {font-family: times; font-size: 50px; margin: 10px 0 20px 0; text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.5); text-align: center;}
+        html {width: 100%; height: 100%;}
+        /*#backgroundVideo {position: fixed; z-index: 0;  top: 0; right: 0; bottom: 0; left: 0; min-width: 100%; min-height: 100%; width: auto; height: auto; background-size: cover; background-position: 50%;}*/
+		#container {width: 600px; margin: 0 auto; transition: opacity 500ms; opacity: 1;}
+		#container.hidden {opacity: 0;}
+        #content {position: relative; top: 300px; z-index: 500; padding-bottom: 200px; background: url("http://rule-of-three.co.uk/wp-content/themes/ruleofthree/images/blackheaderbg.jpg");}
+        #header {width: 100%; height: 300px; background: url("http://www.johanmdahlgren.com/news/preview2.jpg"); position: fixed; top: 0; z-index: 50;}
+        #videoOverlay {position: fixed; top: 0; right: 0; bottom: 0; left: 0; background-color: rgba(0, 0, 0, 0.85); z-index: 10; transition: opacity 500ms; opacity: 1;}
+		#videoOverlay.off {opacity: 0;}
+		#volumeToggle {position: fixed; top: 0; right: 0; width: 50px; height: 50px; background-color: green; z-index: 200;}
+		#volumeToggle.off {background-color: red;}
+		#foregroundToggle {position: fixed; top: 60; right: 0; width: 50px; height: 50px; background-color: green; z-index: 200;}
+		#foregroundToggle.off {background-color: red;}
+		#pauseToggle {position: fixed; top: 160px; right: 0; width: 50px; height: 50px; background-color: green; z-index: 200;}
+		#pauseToggle.off {background-color: red;}
+        #topMenu {width: 100%; height: 50px; background-color: rgba(0, 0, 0, 0.9); text-align: center; box-shadow: 0 0 10px rgba(0, 0, 0, 0.75);}
+        #topMenu a {text-decoration: none; color: white; margin: 0 50px; line-height: 50px;}
+
+		.assets {margin: 40px auto 0 auto; display: table;}
+        .assets img {width: 100px; background-color: rgb(75, 75, 75); float: left; margin: 0 40px 20px 0; display: inline-block; box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); border-radius: 50px; -webkit-filter: grayscale(80%);}
+		.assets img:hover {-webkit-filter: grayscale(0); cursor: pointer;}
+        .block {clear: both; margin-top: 80px;}
+		.block:first-child h2 {font-size: 100px; line-height: 100px;}
+		.block:first-child p:first-letter {font-size: 80px; float: left; vertical-align: top; line-height: 62px; margin-right: 5px; margin-left: -7px;}
+		.block p {text-align: justify;}
+        .date {display: inline-block; width: 20%; vertical-align: top; text-align: center; font-size: 15px; font-weight: bold;}
+        .divider {width: 39%; height: 3px; display: inline-block; border-top: 1px solid white; border-bottom: 1px solid white; vertical-align: top; margin-top: 7px;}
+
+		@media screen and (max-width: 660px)
+		{
+			h2 {font-size: 40px;}
+			#container {width: 100%; padding: 20px; box-sizing: border-box;}
+			.block:first-child h2 {font-size: 60px; line-height: 60px;}
+		}
+	</style>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+</head>
+<body>
+    <!--
+	<div id="videoOverlay"></div>
+	<video id="backgroundVideo" autoplay muted loop>
+		<source src="eyes.mp4" type="video/mp4">
+		Your browser does not support the video tag.
+	</video>
+	<div id="volumeToggle" class="off"></div>
+	<div id="foregroundToggle"></div>
+	<div id="pauseToggle"></div>
+    -->
+    <div id="header">
+        Lorem ipsum
+    </div>
+    <div id="content">
+        <div id="topMenu">
+            <a href="#">News</a>
+            <a href="#">Novels</a>
+            <a href="#">About</a>
+            <a href="#">Resources</a>
+        </div>
+        <div id="container">
+            <div class="block">
+                <div class="divider"></div><div class="date">Wed 12 Dec</div><div class="divider"></div>
+                <h2>Lorem ipsum dolor sit amet</h2>
+                <p>Nisi lacus eros urna lorem dignissim. In aenean bibendum dui porta interdum est lorem rutrum interdum euismod fusce. Sagittis risus fermentum pharetra nibh sed convallis eget. Congue gravida sapien ut proin ipsum purus at. Metus tempor facilisis tellus dui nisl nam lacus. Non placerat gravida non suspendisse eget eu dui. Sollicitudin phasellus ipsum eget phasellus justo aenean bibendum. Mattis amet eu libero eleifend enim augue dui tincidunt rutrum. Nunc nibh ligula dictum eu augue sagittis donec tempor? Ligula vestibulum ligula nulla dui.</p>
+                <div class="assets">
+                    <img src="http://lorempixel.com/300/300/abstract/" />
+                </div>
+            </div>
+            <div class="block">
+                <div class="divider"></div><div class="date">Wed 12 Dec</div><div class="divider"></div>
+                <h2>Lorem ipsum dolor sit amet</h2>
+                <p>Nisi lacus eros urna lorem dignissim. In aenean bibendum dui porta interdum est lorem rutrum interdum euismod fusce. Sagittis risus fermentum pharetra nibh sed convallis eget. Congue gravida sapien ut proin ipsum purus at. Metus tempor facilisis tellus dui nisl nam lacus. Non placerat gravida non suspendisse eget eu dui. Sollicitudin phasellus ipsum eget phasellus justo aenean bibendum. Mattis amet eu libero eleifend enim augue dui tincidunt rutrum. Nunc nibh ligula dictum eu augue sagittis donec tempor? Ligula vestibulum ligula nulla dui.</p>
+            </div>
+            <div class="block">
+                <div class="divider"></div><div class="date">Wed 12 Dec</div><div class="divider"></div>
+                <h2>Lorem ipsum dolor sit amet</h2>
+                <p>Nisi lacus eros urna lorem dignissim. In aenean bibendum dui porta interdum est lorem rutrum interdum euismod fusce. Sagittis risus fermentum pharetra nibh sed convallis eget. Congue gravida sapien ut proin ipsum purus at. Metus tempor facilisis tellus dui nisl nam lacus. Non placerat gravida non suspendisse eget eu dui. Sollicitudin phasellus ipsum eget phasellus justo aenean bibendum. Mattis amet eu libero eleifend enim augue dui tincidunt rutrum. Nunc nibh ligula dictum eu augue sagittis donec tempor? Ligula vestibulum ligula nulla dui.</p>
+                <div class="assets">
+                    <img src="http://lorempixel.com/300/300/nature/" /><img src="http://lorempixel.com/300/300/people/" /><img src="http://lorempixel.com/300/300/sports/" />
+                </div>
+            </div>
+            <div class="block">
+                <div class="divider"></div><div class="date">Wed 12 Dec</div><div class="divider"></div>
+                <h2>Lorem ipsum dolor sit amet</h2>
+                <p>Nisi lacus eros urna lorem dignissim. In aenean bibendum dui porta interdum est lorem rutrum interdum euismod fusce. Sagittis risus fermentum pharetra nibh sed convallis eget. Congue gravida sapien ut proin ipsum purus at. Metus tempor facilisis tellus dui nisl nam lacus. Non placerat gravida non suspendisse eget eu dui. Sollicitudin phasellus ipsum eget phasellus justo aenean bibendum. Mattis amet eu libero eleifend enim augue dui tincidunt rutrum. Nunc nibh ligula dictum eu augue sagittis donec tempor? Ligula vestibulum ligula nulla dui.</p>
+            </div>
+        </div>
+    </div>
+
+	<script type="text/javascript">
+		$("#volumeToggle").on("click", function() {
+			if( $("#backgroundVideo").prop("muted"))
+			{
+				$("#backgroundVideo").prop("muted", false);
+			}
+			else {
+				$("#backgroundVideo").prop("muted", true);
+			}
+
+			$(this).toggleClass("off");
+		});
+		$("#foregroundToggle").on("click", function() {
+			$("#container").toggleClass("hidden");
+
+			$(this).toggleClass("off");
+			$("#videoOverlay").toggleClass("off");
+		});
+		$("#pauseToggle").on("click", function() {
+			if( $("#backgroundVideo").get(0).paused)
+			{
+				$("#backgroundVideo").get(0).play();
+			}
+			else {
+				$("#backgroundVideo").get(0).pause();
+			}
+
+			$(this).toggleClass("off");
+		});
+
+        $(window).on("load", function() {
+            /*
+            var element = $("#backgroundVideo")
+            var elementWidth    = element.width();
+            var elementHeight   = element.height();
+
+            var isWidthDominant = elementWidth >= elementHeight;
+
+            console.log("plopp: " + isWidthDominant);
+
+            if (isWidthDominant) {
+                element.height("100%");
+            }
+
+            var windowResize = function() {
+                var windowWidth     = $(window).width();
+                var windowHeight    = $(window).height();
+                elementWidth        = element.width();
+                elementHeight       = element.height();
+                console.log(windowWidth + " x " + windowHeight + " - " + elementWidth + " x " + elementHeight);
+
+                element.css("margin-left", -Math.abs((elementWidth - windowWidth) / 2));
+            }
+
+            $(window).on("resize", windowResize);
+
+            windowResize();
+
+
+            */
+        });
+	</script>
+
+</body>
+</html>

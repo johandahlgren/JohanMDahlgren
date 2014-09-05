@@ -1,24 +1,24 @@
 <h1><?php print $name ?></h1>
 <div class="newsItem contentContainer">
-	<div>
-		<?php if (getValueFromString("Image", $data) != "") { ?>
-			<a href="<?php print getValueFromString("Image", $data) ?>" class="colorbox" title="<?php print getValueFromString("ImageText", $data) ?>">
-				<span class="newsImage" style="background-image: url(<?php print getValueFromString("Image", $data) ?>);" ></span>
-			</a>
-		<?php } ?>
-		<p>
-			<?php print formatText(getValueFromString("Text", $data), false) ?>
-		</p>
+    <div>
+        <?php if (getValueFromString("Image", $data) != "") { ?>
+        <a href="<?php print getValueFromString("Image", $data) ?>" class="colorbox" title="<?php print getValueFromString("ImageText", $data) ?>">
+            <span class="newsImage" style="background-image: url(<?php print getValueFromString("Image", $data) ?>);" ></span>
+        </a>
+        <?php } ?>
+        <p>
+            <?php print formatText(getValueFromString("Text", $data), false) ?>
+        </p>
         <div class="contentFooter">
-			<span class="shortDate"><?php print getYMD($publishDate) ?></span>
-        	by <a rel="author" href="http://www.johanmdahlgren.com/index.php?entityId=214">Johan M. Dahlgren</a>
+            <span class="shortDate"><?php print getYMD($publishDate) ?></span>
+            by <a rel="author" href="http://www.johanmdahlgren.com/index.php?entityId=214">Johan M. Dahlgren</a>
         </div>
-	</div>
+    </div>
 
-	<?php
-        /*
+    <?php
+    /*
 		if (getValueFromString("AllowDiscussion", $data) == 281) {
-			?>
+    ?>
                 <div class="discussionToggle">Show discussion</div>
 				<div class="discussionDiv">
 					<div id="disqus_thread"></div>
@@ -39,5 +39,5 @@
 			<?php
 		}
         */
-	?>
+    ?>
 </div>

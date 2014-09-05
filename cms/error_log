@@ -1,3 +1,7 @@
 [11-Jan-2014 15:50:07] PHP Parse error:  syntax error, unexpected T_IF in /home/dahlgren/public_html/johanmdahlgren.com/cms/core.php on line 41
 [04-Mar-2014 16:14:56] PHP Parse error:  syntax error, unexpected '}' in /home/dahlgren/public_html/johanmdahlgren.com/cms/security.php on line 30
 [04-Mar-2014 16:16:57] PHP Parse error:  syntax error, unexpected '}' in /home/dahlgren/public_html/johanmdahlgren.com/cms/security.php on line 30
+[04-Sep-2014 22:38:25] PHP Parse error:  syntax error, unexpected '{' in /home/dahlgren/public_html/johanmdahlgren.com/cms/ajaxService.php on line 15
+[04-Sep-2014 22:38:39] PHP Warning:  include_once(cms/core.php) [<a href='function.include-once'>function.include-once</a>]: failed to open stream: No such file or directory in /home/dahlgren/public_html/johanmdahlgren.com/cms/ajaxService.php on line 6
+[04-Sep-2014 22:38:39] PHP Warning:  include_once() [<a href='function.include'>function.include</a>]: Failed opening 'cms/core.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/dahlgren/public_html/johanmdahlgren.com/cms/ajaxService.php on line 6
+[04-Sep-2014 23:22:37] PHP Fatal error:  Call to undefined function printgetValueFromString() in /home/dahlgren/public_html/johanmdahlgren.com/cms/core.php(879) : eval()'d code on line 1

@@ -121,14 +121,33 @@ function getNumberOfPosts() {
 	});
 }
 
-function onYouTubePlayerAPIReady() {
-    player = new YT.Player('video_chromeless', {
-        height: '800',
-        width: '450',
-        videoId: '',
-        events: {
-            'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange
-        }
-    });
+function toggleCommentFields(entityId) {
+    $("#toggleCommentFields" + entityId).fadeToggle(0);
+    $("#insertComment" + entityId).slideToggle(200);
+    $("#commenterName" + entityId).focus();
+}
+function postComment(entityId) {
+    var commenterName   = $("#commenterName" + entityId).val();
+    var commentText     = $("#commentText" + entityId).val();
+
+    if (commenterName != "" && commentText != "") {
+        $.ajax({
+            url: "cms/ajaxService.php",
+            data: {
+                action: "createEntity",
+                parentId: entityId,
+                type: 440, // Comment type ID
+                name: commenterName,
+                state: "active",
+                data_CommenterName: commenterName,
+                data_Text: commentText
+            }
+        })
+        .done(function(data) {
+            $("#comments" + entityId).html(data);
+            $("#commenterName" + entityId).val("");
+            $("#commentText" + entityId).val("");
+            toggleCommentFields(entityId);
+        });
+    }
 }

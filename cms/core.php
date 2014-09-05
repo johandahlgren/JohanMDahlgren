@@ -554,6 +554,7 @@
 		}
 
 		$dataString = requestToDataArray();
+
 		$sqlQuery 	= "INSERT INTO j4_entity (name, state, icon, type, parentId, sortOrder, publishDate, code, listCode, data) VALUES('" . htmlspecialchars($_REQUEST["name"], ENT_QUOTES) . "', '" . $_REQUEST["state"] . "', '" . $_REQUEST["icon"] . "', '" . $type . "', " . $parentId . ", 0, NOW(), '" .  $_REQUEST["code"] . "', '" .  $_REQUEST["listCode"] . "', '" . $dataString . "');";
 		dbExecuteQuery($sqlQuery);
 
@@ -866,6 +867,7 @@
 
 	function renderEntitiesList($aParentId, $aType = null, $aDetailPage, $aSortOrder = null, $aNumberOfItems = 0) {
 		$entities = getEntities($aParentId, $aType, null, null, $aSortOrder, $aNumberOfItems);
+
 		while (list ($id, $name, $state, $icon, $type, $parentId, $publishDate, $sortOrder, $nodeReference, $code, $listCode, $data) = mysql_fetch_row ($entities))
 		{
 			if ($type != 143) {

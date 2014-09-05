@@ -1,6 +1,6 @@
 * {box-sizing: border-box;}
 a {text-decoration: none; color: rgb(255, 122, 0)}
-article {clear: both; margin-top: 200px}
+article {clear: both; margin-top: 150px; position: relative;}
 article:first-child {margin-top: 0}
 section.entityList article:first-child h2 {font-size: 80px; line-height: 80px; margin-bottom: 40px; padding-bottom: 20px}
 blockquote {font-style: italic; color: rgb(170, 145, 85); font-size: 20px; position: relative; width: 90%; margin: 50px auto; text-shadow: 5px 5px 5px rgba(0, 0, 0, 1);}
@@ -22,14 +22,13 @@ section h2 {border-top: none; margin-top: -10px}
 #container {width: 920px; margin: 0 auto; padding: 140px 0 200px 0; background-color: rgba(0, 0, 0, 0.4); border-left: 1px solid rgb(20, 20, 20); border-right: 1px solid rgb(20, 20, 20); box-shadow: 2px 2px 50px rgba(0, 0, 0, 1);}
 #container.hidden {opacity: 0;}
 #container > * {padding: 0 150px;}
-#container > iframe.youtubeFullWidth {padding: 0; margin-top: -140px;}
+#container > iframe.youtubeFullWidth {padding: 0; margin-top: -140px; height: 420px; box-shadow: none;}
 #container > blockquote {margin: 80px auto 100px auto;}
 #crumbtrailContainer {background-color: rgba(31, 31, 31, 1); box-shadow: 0 0 20px rgba(0, 0, 0, 0.75); border-bottom: 1px solid black;}
-#moreNews {display: block; text-align: center; margin-top: 100px; font-size: 20px; background-color: rgb(30, 30, 30); line-height: 60px; border-radius: 5px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.75); border: 1px solid rgb(40, 40, 40);}
-#moreNews:hover {background-color: rgb(40, 40, 40);}
-#overlay { box-shadow: inset 0 0 150px rgb(0, 0, 0); width: 100%; height: 100%; position: fixed; pointer-events: none;}
+#moreNews {margin-top: 120px;}
+#overlay {display: none; box-shadow: inset 0 0 150px rgb(0, 0, 0); width: 100%; height: 100%; position: fixed; pointer-events: none;}
 #pageTitle {color: white; font-size: 90px; font-family: "Libre Baskerville",serif; text-align: center; display: block; padding-top: 85px; text-shadow: 0 0 30px rgba(255, 255, 255, 0.5);}
-#pageTitleSmall {font-size: 25px; font-family: "Roboto"; color: rgb(130, 130, 130); display: block; margin: -20px 0 0 -170px; text-shadow: none;}
+#pageTitleSmall {font-size: 25px; font-family: "Roboto", "arial"; color: rgb(130, 130, 130); display: block; margin: -20px 0 0 -170px; text-shadow: none;}
 #topMenu {width: 100%; background-color: rgb(25, 25, 25); text-align: center; box-shadow: 0 0 100px rgba(0, 0, 0, 1); z-index: 100;}
 #topMenu.sticky {position: fixed; top: 0}
 #topMenu a {color: white; margin: 0 70px; line-height: 50px}
@@ -38,7 +37,12 @@ section h2 {border-top: none; margin-top: -10px}
 .asset {width: 100px; height: 100px; background-color: #4b4b4b; background-size: contain; background-position: center; margin: 0 40px 20px 0; display: inline-block; box-shadow: 2px 2px 5px rgba(0,0,0,0.5); border-radius: 50px; -webkit-filter: grayscale(80%)}
 .asset: hover{cursor: pointer; -webkit-filter: grayscale(0)}
 .assets{margin: 40px auto 0 auto; display: table}
+.button {display: inline-block; text-align: center; margin: 20px auto; padding: 20px 50px; font-size: 20px; background-color: rgb(30, 30, 30); border-radius: 5px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.75); border: 1px solid rgb(40, 40, 40);}
+.button:hover {background-color: rgb(40, 40, 40); cursor: pointer;}
+.cancelComment {margin-right: 40px;}
 .center {margin: 0 auto; display: table;}
+.commenterName {font-weight: bold;}
+.comments {background-color: rgba(100,100,100,0.08); border-radius: 5px; padding: 20px; color: rgb(120, 120, 120); margin-top: 20px;}
 .date {display: inline-block; width: 20%; vertical-align: top; text-align: center; font-weight: bold}
 .divider{width: 40%; height: 3px; display: inline-block; border-bottom: 4px double white; vertical-align: top; margin-top: 6px}
 .entityFlash {opacity: 0.8; position: relative; width: 30%; height: 220px; background-color: rgb(100, 100, 100); border-radius: 5px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.75); background-size: cover; background-position: center; margin: 0 5% 140px 0; display: inline-block;}
@@ -47,18 +51,26 @@ section h2 {border-top: none; margin-top: -10px}
 .entityFlash h2 {font-family: "Roboto"; font-size: 16px; text-shadow: none; border: none; padding: 10px; position: absolute; height: 50px; bottom: -60px; margin: 0; width: 100%; text-align: center; box-sizing: border-box;}
 .ieOnly {display: none; background-color: red; text-align: center; padding: 10px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.75); font-weight: bold; border: 5px solid rgb(200, 0, 0);}
 .ieOnly a {color: black;}
+.insertComment {display: none; margin-top: 20px;}
+.insertComment label {display: inline-block; padding: 10px 0 5px 0;}
+.insertComment input, .insertComment textarea {width: 100%; background-color: rgba(100, 100, 100, 0.3); border: 2px solid rgba(100, 100, 100, 0.4); border-radius: 5px; padding: 10px 20px; color: rgb(255, 255, 255); font-size: 16px;}
+.insertComment textarea {height: 100px;}
+.labelDescription {color: rgb(60, 60, 60);}
 .narrow p {text-indent: 35px;}
 .newBlock {clear: both; padding: 40px 0 0 0;}
 .pageTitle {color: #fff; font-size: 70px; text-align: center; display: block; margin-top: 80px; font-family: "Libre Baskerville"; text-shadow: 0 0 30px rgba(255, 255, 255, 0.5);}
 .pageTitleSmall {font-size: 30px; display: block; font-family: "Roboto"; color: rgb(130, 130, 130); margin: -20px 0 0 -150px; text-shadow: none;}
+.postComment {width: 200px; margin: 20px auto;}
 .readMore {text-align: right; display: block;}
-.source {float: right; text-align: right;}
+.source {float: right; text-align: right; padding-top: 10px;}
 .spotifyTracks iframe {width: 250px; height: 330px; float: left; margin: 0 20px 20px 0;}
 .subH1 {display: block; font-size: 50%;}
 .subPageLink {display: inline-block; height: 120px; background-size: 50px; background-repeat: no-repeat; margin: 20px 0; background-position: center 20px; vertical-align: top; text-align: center; padding-top: 80px; width: 180px; background-color: rgb(30, 30, 30); border-radius: 5px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.75); border: 1px solid rgb(40, 40, 40); margin: 40px 10px;}
 .subPageLink:hover {background-color: rgb(40, 40, 40);}
-.textDivider {display: block; height: 100px; content: "AAA"; background: url("images/divider.png") center no-repeat; background-size: 50%;}
-.youtubeFullWidth {width: 100%; height: 420px; margin: 0 auto; display: block; border: none;}
+.textDivider {display: block; height: 100px; background: url("images/divider.png") center no-repeat; background-size: 50%;}
+.toggleCommentFields {position: absolute; right: 0; margin-top: 10px; color: rgb(60, 60, 60);}
+.toggleCommentFields:hover {cursor: pointer; color: rgb(80, 80, 80);}
+.youtubeFullWidth {width: 100%; height: 310px; margin: 40px auto; display: block; border: none;}
 
 @media screen and (max-width: 920px){
 	h2{font-size: 40px}
@@ -66,7 +78,7 @@ section h2 {border-top: none; margin-top: -10px}
 
 	#container{width: 100%; padding: 60px 0 200px 0; box-sizing: border-box}
     #container > * {padding: 0 20px;}
-    #container > iframe.youtubeFullWidth {margin-top: -60px;}
+    #container > iframe.youtubeFullWidth {margin-top: -60px; height: 270px;}
 	#pageTitle {font-size: 50px; padding-top: 55px;}
 	#pageTitleSmall {font-size: 20px; margin: -15px 0 0 -140px;}
 	#topMenu a {margin: 0 35px;}
@@ -86,6 +98,7 @@ section h2 {border-top: none; margin-top: -10px}
 
     #container {padding: 60px 0; background: rgb(30, 30, 30);}
     #container > blockquote {margin: 40px auto 80px auto;}
+    #container > iframe.youtubeFullWidth {height: 158px;}
     #content {top: 150px; background: rgb(40, 40, 40); background-blend-mode: normal;}
 	#moreNews {margin-top: 20px;}
     #pageTitle {font-family: serif; font-size: 35px; padding-top: 40px;}
@@ -95,8 +108,5 @@ section h2 {border-top: none; margin-top: -10px}
     .block {margin-top: 100px;}
     .entityFlash {display: none;}
 	.font-effect-decaying {-webkit-mask-image: none;}
-	.pageTitle{font-size: 40px}
-	.pageTitleSmall{display: none}
-    .subPageLink {width: 100%; background-position: 20px 50%; background-size: 50px; padding-top: 0; line-height: 70px; height: 70px; margin: 10px 0;}
-    .youtubeFullWidth {height: 158px;}
+	.pageTitle{}
 }
