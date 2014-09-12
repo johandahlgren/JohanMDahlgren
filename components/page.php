@@ -73,7 +73,11 @@ $backgroundImage 	= getValueFromString("BackgroundImage", $pageData);
 <!DOCTYPE html>
 <html lang="en-GB" itemscope itemtype="http://schema.org/Blog">
     <head>
-        <link href="http://fonts.googleapis.com/css?family=Libre+Baskerville|Roboto:300&effect=decaying" rel="stylesheet" type="text/css">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+        <script>var pageEntityId = <?php print $selectedEntity ?>;</script>
+        <script src="js/main.min.js"></script>
+
+        <link href="http://fonts.googleapis.com/css?family=Libre+Baskerville%7CRoboto:300&amp;effect=decaying" rel="stylesheet" type="text/css">
         <link rel="stylesheet" type="text/css" href="style/style<?php print $_REQUEST["css"] ?>.min.css" media="screen" />
 
         <link rel="canonical" href="<?php print getCurrentUrl() ?>"/>
@@ -110,10 +114,6 @@ $backgroundImage 	= getValueFromString("BackgroundImage", $pageData);
         <meta itemprop="description" content="<?php print $description ?>">
         <meta itemprop="image" content="<?php print $image ?>">
 
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-        <script src="http://www.youtube.com/player_api?enablejsapi=1&version=3"></script>
-        <script>var pageEntityId = <?php print $selectedEntity ?>;</script>
-        <script src="js/main.min.js"></script>
         <!--[if IE]>
 <style>
 .ieOnly {display: block;}
@@ -140,6 +140,19 @@ renderCrumbtrail($selectedEntity, true);
             ?>
         </nav>
         <div id="container">
+            <script>
+                (function() {
+                    var cx = "004915074227104925052:vxcqrotklke";
+                    var gcse = document.createElement("script");
+                    gcse.type = "text/javascript";
+                    gcse.async = true;
+                    gcse.src = (document.location.protocol == "https:" ? "https:" : "http:") +
+                        "//www.google.com/cse/cse.js?cx=" + cx;
+                    var s = document.getElementsByTagName("script")[0];
+                    s.parentNode.insertBefore(gcse, s);
+                })();
+            </script>
+            <gcse:search></gcse:search>
             <?php
 $template = getEntity(getValueFromString("Template", $pageData));
 $templateCode = $template["code"];

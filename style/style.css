@@ -1,12 +1,12 @@
 * {box-sizing: border-box;}
 a {text-decoration: none; color: rgb(255, 122, 0)}
 article {clear: both; margin-top: 150px; position: relative;}
-article:first-child {margin-top: 0}
+article:first-of-type {margin-top: 60px}
 section.entityList article:first-child h2 {font-size: 80px; line-height: 80px; margin-bottom: 40px; padding-bottom: 20px}
-blockquote {font-style: italic; color: rgb(170, 145, 85); font-size: 20px; position: relative; width: 90%; margin: 50px auto; text-shadow: 5px 5px 5px rgba(0, 0, 0, 1);}
+blockquote {font-style: italic; color: rgb(170, 145, 85); font-size: 20px; position: relative; width: 90%; margin: 0 auto 80px auto; text-shadow: 5px 5px 5px rgba(0, 0, 0, 1);}
 blockquote:before {content: "\0022"; font-size: 100px; font-family: times; color: rgb(255, 122, 0); line-height: 0px; vertical-align: bottom; margin-right: 10px;}
-body {color: white; font-family: "Roboto"; font-size: 16px; margin: 0; height: 100%; width: 100%; background: url("images/darkBackground.jpg");}
-h1, h2, h3 {font-family: "Libre Baskerville", serif; font-size: 40px; font-weight: normal; margin: 0 0 40px 0; text-shadow: 2px 2px 20px rgba(0,0,0,0.75); text-align: center; border-top: 4px double white; border-bottom: 4px double white; padding: 15px 0; clear: both;}
+body {color: white; background-color: rgb(50, 50, 50); font-family: "Roboto"; font-size: 16px; margin: 0; height: 100%; width: 100%; background: url("images/darkBackground.jpg");}
+h1, h2, h3 {font-family: "Libre Baskerville", serif; font-size: 40px; font-weight: normal; margin: 60px 0 40px 0; text-shadow: 2px 2px 20px rgba(0,0,0,0.75); text-align: center; border-top: 4px double white; border-bottom: 4px double white; padding: 15px 0; clear: both;}
 /*h1 ~ p:first-of-type:first-letter, h2 ~ p:first-of-type:first-letter {font-size: 70px; float: left; font-weight: bold; padding: 30px; margin-top: 8px; background-image: url("images/anfang.png"); background-size: contain; background-repeat: no-repeat; text-shadow: 0 0 20px black; font-family: "Libre Baskerville",serif; text-align: center; background-position: center;}*/
 h2 {margin-top: 60px;}
 h2:first-child {margin-top: 0}
@@ -20,14 +20,14 @@ p a{color: #ffca99; border-bottom: 1px solid #ff8500}
 p img, .bookCover, .articleImage {float: left; margin-right: 20px; margin-top: 8px; height: 250px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.75);}
 section h2 {border-top: none; margin-top: -10px}
 
-#container {width: 920px; margin: 0 auto; padding: 140px 0 200px 0; background-color: rgba(0, 0, 0, 0.4); border-left: 1px solid rgb(20, 20, 20); border-right: 1px solid rgb(20, 20, 20); box-shadow: 2px 2px 50px rgba(0, 0, 0, 1);}
+#container {display: table; width: 920px; margin: 0 auto; padding: 0 0 200px 0; background-color: rgba(0, 0, 0, 0.4); box-shadow: 2px 2px 50px rgba(0, 0, 0, 1);}
 #container.hidden {opacity: 0;}
 #container > * {padding: 0 150px;}
-#container > iframe.youtubeFullWidth {padding: 0; margin-top: -140px; height: 420px; box-shadow: none;}
+#container > iframe.youtubeFullWidth {padding: 0; margin: 0; height: 420px; box-shadow: none;}
 #container > blockquote {margin: 80px auto 100px auto;}
+#container h1.pageTitle {border: none; font-size: 15px; text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5); color: rgb(100, 100, 100); margin: 0; background-color: rgba(0, 0, 0, 0.5); padding: 20px;}
 #crumbtrailContainer {background-color: rgba(31, 31, 31, 1); box-shadow: 0 0 20px rgba(0, 0, 0, 0.75); border-bottom: 1px solid black;}
 #moreNews {margin-top: 120px;}
-#overlay {display: none; box-shadow: inset 0 0 150px rgb(0, 0, 0); width: 100%; height: 100%; position: fixed; pointer-events: none;}
 #pageTitle {color: white; font-size: 90px; font-family: "Libre Baskerville",serif; text-align: center; display: block; padding-top: 85px; text-shadow: 0 0 30px rgba(255, 255, 255, 0.5);}
 #pageTitleSmall {font-size: 25px; font-family: "Roboto", "arial"; color: rgb(130, 130, 130); display: block; margin: -20px 0 0 -170px; text-shadow: none;}
 #topMenu {width: 100%; background-color: rgb(25, 25, 25); text-align: center; box-shadow: 0 0 100px rgba(0, 0, 0, 1); z-index: 100;}
@@ -50,14 +50,14 @@ section h2 {border-top: none; margin-top: -10px}
 .entityFlash {opacity: 0.8; position: relative; width: 30%; height: 220px; background-color: rgb(100, 100, 100); border-radius: 5px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.75); background-size: cover; background-position: center; margin: 0 5% 140px 0; display: inline-block;}
 .entityFlash:hover {opacity: 1;}
 .entityFlash:nth-child(3) {margin-right: 0;}
-.entityFlash h2 {font-family: "Roboto"; font-size: 16px; text-shadow: none; border: none; padding: 10px; position: absolute; height: 50px; bottom: -60px; margin: 0; width: 100%; text-align: center; box-sizing: border-box;}
+.entityFlash span {font-family: "Roboto"; font-size: 16px; text-shadow: none; border: none; padding: 10px; position: absolute; height: 50px; bottom: -60px; margin: 0; width: 100%; text-align: center; box-sizing: border-box;}
 .ieOnly {display: none; background-color: red; text-align: center; padding: 10px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.75); font-weight: bold; border: 5px solid rgb(200, 0, 0);}
 .ieOnly a {color: black;}
 .insertComment {display: none; margin-top: 20px; background-color: rgba(100, 100, 100, 0.2); padding: 0 20px; border-radius: 5px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.75);}
 .insertComment label {display: inline-block; padding: 10px 0 5px 0;}
 .insertComment input, .insertComment textarea {width: 100%; background-color: rgba(100, 100, 100, 0.3); border: 2px solid rgba(100, 100, 100, 0.4); border-radius: 5px; padding: 10px 20px; color: rgb(255, 255, 255); font-size: 16px;}
 .insertComment textarea {height: 100px;}
-.labelDescription {color: rgb(60, 60, 60);}
+.labelDescription {color: rgb(0, 100, 0);}
 .narrow p {text-indent: 35px;}
 .newBlock {clear: both; padding: 40px 0 0 0;}
 .pageTitle {color: #fff; font-size: 70px; text-align: center; display: block; margin-top: 80px; font-family: "Libre Baskerville"; text-shadow: 0 0 30px rgba(255, 255, 255, 0.5);}
@@ -70,8 +70,8 @@ section h2 {border-top: none; margin-top: -10px}
 .subPageLink {display: inline-block; height: 120px; background-size: 50px; background-repeat: no-repeat; margin: 20px 0; background-position: center 20px; vertical-align: top; text-align: center; padding-top: 80px; width: 180px; background-color: rgb(30, 30, 30); border-radius: 5px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.75); border: 1px solid rgb(40, 40, 40); margin: 40px 10px;}
 .subPageLink:hover {background-color: rgb(40, 40, 40);}
 .textDivider {display: block; height: 100px; background: url("images/divider.png") center no-repeat; background-size: 50%;}
-.toggleCommentFields {position: absolute; right: 0; margin-top: 10px; color: rgb(60, 60, 60);}
-.toggleCommentFields:hover {cursor: pointer; color: rgb(80, 80, 80);}
+.toggleCommentFields {position: absolute; right: 0; margin-top: 10px; color: rgb(80, 80, 80);}
+.toggleCommentFields:hover {cursor: pointer; color: rgb(100, 100, 100);}
 .youtubeFullWidth {width: 100%; height: 310px; margin: 40px auto; display: block; border: none;}
 
 @media screen and (max-width: 920px){
@@ -92,16 +92,15 @@ section h2 {border-top: none; margin-top: -10px}
 @media screen and (max-width: 480px){
     blockquote {font-size: 17px; clear: both; margin: 40px auto 100px auto;}
     body {font-family: sans-serif;}
-	h1, h2 {font-family: serif; font-size: 30px; margin-top: 0;}
+	h1, h2 {font-family: serif; font-size: 24px; margin-top: 0;}
     header {height: 120px; background: rgb(0, 0, 0);}
 	p {text-align: justify;}
     p img, .bookCover, .articleImage {width: 100%; height: initial; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.75); margin-bottom: 20px; float: initial;}
-	section.entityList article:first-child h2 {font-size: 50px; line-height: 70px;}
+	section.entityList article:first-child h2 {font-size: 30px; line-height: 30px;}
 
     #container {padding: 60px 0; background: rgb(30, 30, 30);}
     #container > blockquote {margin: 40px auto 80px auto;}
     #container > iframe.youtubeFullWidth {height: 158px;}
-    #content {top: 150px; background: rgb(40, 40, 40); background-blend-mode: normal;}
     #pageTitle {font-family: serif; font-size: 35px; padding-top: 40px;}
 	#pageTitleSmall {display: none;}
 	#topMenu a {margin: 0 15px;}
@@ -110,5 +109,5 @@ section h2 {border-top: none; margin-top: -10px}
     .button {width: 100%;}
     .entityFlash {display: none;}
 	.font-effect-decaying {-webkit-mask-image: none;}
-    .subPageLink {width: 100%; margin: 10px 0; height: 60px; background-position: 20px center; line-height: 60px; padding-top: 0;}
+    .subPageLink {width: 100%; margin: 10px 0; height: 80px; background-position: 20px center; line-height: 80px; vertical-align: initial; padding-top: 0;}
 }

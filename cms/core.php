@@ -232,6 +232,15 @@
 		return $_SESSION["userIsLoggedIn"];
 	}
 
+    function getYMDM2M($aDate)
+    {
+        setlocale(LC_TIME, "en_UK");
+
+        $dateString = strftime("%Y-%m-%d", $aDate);
+
+        return iconv("ISO-8859-1", "UTF-8", $dateString);
+    }
+
 	function getYMD($aDate)
 	{
 		setlocale(LC_TIME, "en_UK");

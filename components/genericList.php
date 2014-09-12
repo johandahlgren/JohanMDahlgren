@@ -12,7 +12,7 @@ renderEntitiesList($folderId, null, $detailPage, "DESC", $itemsToShow);
 if ($itemsToShow > 0) {
     ?>
     <div class="center">
-        <a href="index.php?entityId=<?php print $moreItemsPage ?>" id="moreNews" class="button">Read older news &raquo;</a>
+        <a href="index.php?entityId=<?php print $moreItemsPage ?>" id="moreNews" class="button">Read older news</a>
     </div>
     <?php
 }

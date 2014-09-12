@@ -27,6 +27,6 @@
 ?>
 
 <!--
-Time to render page: <?php print round(($timerEnd - $timerStart), 4) ?>ms
+Time to render page: <?php print round(($timerEnd - $timerStart), 3) ?>s
 Loaded from cache: <?php print $loadedFromCache ?>
 -->
