@@ -1,3 +1,6 @@
+/* jslint browser:true */
+/* global $ */
+
 var animationSpeed 		= 200;
 var useParallax			= false;
 var disqusUrl 			= "http://www.dahlgren.tv/johan/boksiten/index.php?entityId=" + pageEntityId;
