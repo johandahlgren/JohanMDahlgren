@@ -267,11 +267,11 @@
 
 		if ($yearOfEntry < $todaysYear)
 		{
-			$dateString = strftime("%b %e %Y", $aDate);
+			$dateString = strftime("%b %d %Y", $aDate);
 		}
 		else
 		{
-			$dateString = strftime("%b %e", $aDate);
+			$dateString = strftime("%b %d", $aDate);
 		}
 
 		return iconv("ISO-8859-1", "UTF-8", $dateString);
@@ -336,17 +336,19 @@
 
 	function formatText($aText, $aWrapInParagraph = true, $insertParagraphs = true) {
 		$fixedString = $aText;
-		if ($insertParagraphs) {
-			$fixedString = str_replace("\n", "</p><p>", $fixedString);
-			$fixedString = str_replace("\r\n", "</p><p>", $fixedString);
-		}
+		
 		$fixedString = str_replace("##", "<span class='textDivider'></span>", $fixedString);
-		$fixedString = str_replace("[i]", "<i>", $fixedString);
-		$fixedString = str_replace("[/i]", "</i>", $fixedString);
+		$fixedString = str_replace("[i]", "<em>", $fixedString);
+		$fixedString = str_replace("[/i]", "</em>", $fixedString);
 		$fixedString = str_replace("[q]", "<blockquote>", $fixedString);
 		$fixedString = str_replace("[/q]", "</blockquote>", $fixedString);
 		$fixedString = str_replace("[br]", "<br/>", $fixedString);
 
+		if ($insertParagraphs) {
+			$fixedString = str_replace("\n", "</p><p>", $fixedString);
+			$fixedString = str_replace("\r\n", "</p><p>", $fixedString);
+		}
+		
 		$fixedString = htmlspecialchars_decode($fixedString);
 
 		if ($aWrapInParagraph) {
@@ -744,14 +746,15 @@
 
 		while (list ($id, $name, $state, $icon, $type, $parentId, $publishDate, $sortOrder, $nodeReference, $code, $listCode, $data) = mysql_fetch_row ($result))
 		{
+			$typeEntity	= getEntity($type);
+			$parentType = $typeEntity["type"];
+			
 			if ($icon == "")
 			{
 				$icon = getTypeIcon($type);
 			}
 			if ($icon == "")
 			{
-				$typeEntity	= getEntity($type);
-				$parentType = $typeEntity["type"];
 				$icon 		= getTypeIcon($parentType);
 			}
 			?>
@@ -772,7 +775,7 @@
 							</div>
 							<?php if ($aRenderFullMenu ) { ?>
 								<div class="menuItemTitle">
-									<a class="editEntity" href="#" title="Edit this node (ID: <?php print $id ?>)">
+									<a class="editEntity" href="#" title="Edit this node (<?php print $id ?>)">
 										<?php
 											if ($name != "")
 											{
@@ -784,6 +787,8 @@
 											}
 										?>
 									</a>
+									&nbsp;
+									<span class="entityType">(<?php print $typeEntity["name"] ?>)</span>
 								</div>
 								<?php if ($nodeReference != "")
 									{
@@ -850,6 +855,12 @@
 			$typeEntity		= getEntity($type);
 			$code 			= $typeEntity["code"];
 
+			/* If there is no code in the database, check if there is code on disk */
+						
+			if ($code == "") {
+				$code = getFileContent("components/" . $typeEntity["name"] . ".php", true);
+			}
+			
 			if ($code != "") {
 				eval("?>" . $code);
 			}
@@ -867,6 +878,13 @@
 			if ($type != 143) {
 				$typeEntity = getEntity($type);
 				$code = $typeEntity["code"];
+				
+				/* If there is no code in the database, check if there is code on disk */
+			
+				if ($code == "") {
+					$code = getFileContent("components/" . $typeEntity["name"] . ".php", true);
+				}
+				
 				if ($code != "") {
 					eval ("?>" . $code);
 				}
@@ -914,7 +932,6 @@
 						</div>
 					</form>
 				</div>
-                <a href="index.php?entityId=<?php print $_REQUEST["detailPage"] ?>&subEntityId=<?php print $id ?>" class="readMore">More</a>
 			</div>
 		<?php
 	}

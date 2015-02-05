@@ -64,12 +64,13 @@ if ($selectedEntity == null) {
 
 $rootPageEntity 	= getEntity(116);
 $rootPageData 		= $rootPageEntity["data"];
-$image 				= getValueFromString("Image", $rootPageData);
+$image 				= "http://" . $_SERVER["SERVER_NAME"] . "/" . getValueFromString("Image", $rootPageData);
 
 $pageEntity 		= getEntity($selectedEntity);
 $pageData 			= $pageEntity["data"];
 
 $pageTitle      	= $pageEntity["name"];
+$pageDescription 	= strip_tags(formatText(getValueFromString("About", $pageData)));
 
 if (getValueFromString("Title", $pageData) != "") {
     $pageTitle = getValueFromString("Title", $pageData);
@@ -78,13 +79,13 @@ if (getValueFromString("Title", $pageData) != "") {
 <!DOCTYPE html>
 <html lang="en-GB" itemscope itemtype="http://schema.org/Blog">
     <head>
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+        <link href="http://fonts.googleapis.com/css?family=Krona+One" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="style/style<?php print $_REQUEST["css"] ?>.css?debug=<?php print time() ?>" media="screen" />
+
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
         <script>var pageEntityId = <?php print $selectedEntity ?>;</script>
-        <script src="js/main.min.js"></script>
-
-        <link href="http://fonts.googleapis.com/css?family=Libre+Baskerville%7CRoboto:300&amp;effect=decaying" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" type="text/css" href="style/style<?php print $_REQUEST["css"] ?>.min.css" media="screen" />
-
+        <script src="js/main.js"></script>
+		
         <link rel="canonical" href="<?php print getCurrentUrl() ?>"/>
         <link rel="icon" type="image/png" href="style/images/favicon.png" />
         <link rel="alternate" href="http://www.johanmdahlgren.com/rss.php" type="application/atom+xml" title="Johan M. Dahlgren">
@@ -92,12 +93,23 @@ if (getValueFromString("Title", $pageData) != "") {
         <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
         <meta name="mobile-web-app-capable" content="yes">
+        <meta name="theme-color" content="#000">
 
         <title><?php print $pageTitle ?></title>
 
+		<?php
+			if ($_REQUEST["subEntityId"] != null) {
+				$subEntity 			= getEntity($_REQUEST["subEntityId"]);
+				$subEntityData 		= $subEntity["data"];
+				$pageTitle 			= $subEntity["name"];
+				$image 				= "http://" . $_SERVER["SERVER_NAME"] . "/" . getValueFromString("Image", $subEntityData);
+				$pageDescription 	= strip_tags(formatText(getValueFromString("Text", $subEntityData)));
+			}
+		?>
+
         <meta property="og:image" content="<?php print $image ?>"/>
-        <meta property="og:title" content="<?php print pageTitle ?>"/>
-        <meta property="og:description" content="<?php print strip_tags(formatText(getValueFromString("About", $pageData))) ?>"/>
+        <meta property="og:title" content="<?php print $pageTitle ?>"/>
+        <meta property="og:description" content="<?php print $pageDescription ?>"/>
         <meta property="og:url" content="<?php print getCurrentUrl() ?>"/>
         <meta property="og:site_name" content="Johan M. Dahlgren author site"/>
         <meta property="og:type" content="blog"/>
@@ -108,10 +120,25 @@ if (getValueFromString("Title", $pageData) != "") {
 </style>
 <![endif]-->
     </head>
-    <body>
-        <a href="https://plus.google.com/+Johanmdahlgrenauthor" rel="publisher"></a>
-
-        <div itemscope itemtype="http://schema.org/Blog">
+	<?php
+		$extraStyle = "";
+		if (getValueFromString("BackgroundImage", $data) != null) {
+			$extraStyle = "style=\"background-image: url(" . getValueFromString("BackgroundImage", $data) . ")\"";
+		}
+		if ($_REQUEST["subEntityId"] != null) {
+			$extraStyle = $extraStyle .  " class=\"hasCrumbtrail\"";
+		}
+	?>
+	<body <?php print $extraStyle ?>>
+		<nav id="topMenu">
+			<a href="http://www.johanmdahlgren.com" class="siteHomeLink <?php if($selectedEntity == 116 || $selectedEntity == "") {print("active");} ?>">Home</a>
+			<?php
+				renderMenu(116);
+				renderCrumbtrail($selectedEntity, true);
+			?>
+		</nav>
+		
+        <div itemscope itemtype="http://schema.org/Blog" class="parallax">
             <meta itemprop="name" content="<?php print $rootPageEntity["name"] ?>" />
             <meta itemprop="description" content="<?php print strip_tags(formatText(getValueFromString("About", $rootPageData))) ?>" />
             <meta itemprop="image" content="<?php print $image ?>" />
@@ -121,27 +148,14 @@ if (getValueFromString("Title", $pageData) != "") {
             <meta itemprop="keywords" content="science fiction, noir, dystopia, action, violence" />
             <meta itemprop="typicalAgeRange" content="18-" />
 
-
             <div class="ieOnly">
                 Please do not use older versions of Internet Explorer. At all. Ever.<br/>
                 Upgrade to the latest version or better yet, <a href="https://www.google.com/chrome/browser/">download Chrome</a>.
             </div>
             <div id="overlay"></div>
-            <header>
-                <a href="http://www.johanmdahlgren.com" id="pageTitle" class="font-effect-decaying">
-                    Johan M. Dahlgren
-                    <span id="pageTitleSmall">Aspiring science fiction author</span>
-                </a>
-            </header>
-            <nav id="topMenu">
-                <a href="http://www.johanmdahlgren.com" class="<?php if($selectedEntity == 116 || $selectedEntity == "") {print("active");} ?>">Home</a>
-                <?php
-                    renderMenu(116);
-                    renderCrumbtrail($selectedEntity, true);
-                                ?>
-                            </nav>
-                            <div id="container">
-                                <?php
+			
+			<div id="container">
+				<?php
                     $template = getEntity(getValueFromString("Template", $pageData));
                     $templateCode = $template["code"];
 
@@ -150,6 +164,11 @@ if (getValueFromString("Title", $pageData) != "") {
                     }
                 ?>
             </div>
+			<footer>
+				<div class="innerContainer">
+					<?php renderEntity(536) ?>
+				</div>
+			</footer>
         </div>
 
         <?php if ($_SESSION["loggedIn"] != true) { ?>

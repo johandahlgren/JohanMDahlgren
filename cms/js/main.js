@@ -54,7 +54,7 @@ function bindEvents() {
 		$(this).closest("li").children("ul").slideToggle(animationSpeed);
 
 		var openNodes = "";
-		var temp = ""
+		var temp = "";
 		
 		$("#nodeTree .open").each(function() {
 			temp = $(this).find(".menuItem").attr("data-entityid");

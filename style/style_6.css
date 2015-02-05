@@ -10,16 +10,16 @@
 }
 
 * {box-sizing: border-box;}
-a {text-decoration: none; color: rgb(126, 189, 0); font-family: arial;}
-a.crumbtrail {line-height: 40px;}
-a.crumbtrail:after {content: ">"; margin: 0 10px; color: rgb(190, 190, 190);}
+a {text-decoration: none; color: rgb(126, 189, 0);}
+a.crumbtrail {line-height: 50px;}
+a.crumbtrail:after {content: ">"; margin-left: 5px; color: rgb(190, 190, 190);}
 a.source {margin-top: 10px;}
 article {width: 100%; display: inline-block; border-top: 20px solid black; background-size: 100%; background-size: cover; background-position: top center; vertical-align: top; position: relative; transform: translateZ(0);}
 article:first-child {width: 100%;}
 blockquote {font-family: serif; font-style: italic; margin: 40px auto; width: 75%; font-size: 120%; color: rgb(255, 255, 255); line-height: 30px; text-shadow: 1px 1px 2px black;}
 blockquote:before {content: "\0022"; font-size: 100px; font-family: serif; color: rgb(126, 189, 0); line-height: 0; vertical-align: bottom; margin-right: 10px; margin-left: -10px;}
-body {background-color: black; background-position: center; color: white; padding: 0; margin: 0; font-size: 20px; font-family: arial; background-size: cover;}
-footer {background-color: black; color: rgb(150, 150, 150); z-index: 1000; position: relative; text-align: center; border-top: 20px solid black; transform: translateZ(0);
+body {background-color: black; color: white; padding: 0; margin: 0; font-size: 20px; font-family: arial;}
+footer {background-color: black; color: rgb(100, 100, 100); z-index: 1000; position: relative; text-align: center; border-top: 20px solid black; transform: translateZ(0);
 background: #0a0a0a; /* Old browsers */
 background: -moz-linear-gradient(top,  #0a0a0a 0%, #000000 99%); /* FF3.6+ */
 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#0a0a0a), color-stop(99%,#000000)); /* Chrome,Safari4+ */
@@ -32,7 +32,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0a0a0a', end
 footer .innerContainer {padding: 50px 0;}
 h1 {color: white; font-family: "Krona One", sans-serif; margin: 0 0 60px 0; font-size: 50px; line-height: 50px;}
 h2 {color: white; font-size: 40px;  font-family: "Krona One", sans-serif; line-height: 50px; margin: 0 0 20px 0; text-shadow: 2px 2px 10px black;}
-header {position: relative; color: white; background-size: cover; background-repeat: no-repeat; background-position: center; text-shadow: 0 0 5px black;}
+header {position: relative; color: white; background-size: cover; background-repeat: no-repeat; background-position: center; border-top: 20px solid black; text-shadow: 0 0 5px black;}
 header:first-of-type blockquote {font-size: 160%; line-height: 40px;}
 header:first-of-type h2 {font-size: 60px; line-height: 70px;}
 header:first-of-type .backgroundOverlay {background-color: rgba(0, 0, 0, 0.7);}
@@ -45,40 +45,37 @@ html {width: 100%; height: 100%}
 iframe {width: 100%; margin: 20px 0; border: 20px solid black; box-shadow: 5px 5px 10px black; background-color: black;}
 p {margin: 0; line-height: 160%; text-shadow: 1px 1px 2px black;}
 
-#container {padding-top: 50px; font-family: courier;}
-#crumbtrailContainer {text-align: center; background-color: rgb(30, 30, 30); font-family: arial; font-size: 16px;}
+#container {padding-top: 70px; font-family: courier;}
+#crumbtrailContainer {max-width: 570px; margin: 0 auto; text-align: center;}
 #crumbtrailContainer + header, #crumbtrailContainer + .entityFlash, #crumbtrailContainer + .newsList {border-top: 0;}
 #moreNews {margin-top: 40px;}
 #pageTitle {font-size: 80px;}
 #pageTitleSmall {font-size: 20px; display: block;}
-#topMenu {width: 100%; font-size: 16px; background-color: rgb(20, 20, 20); text-align: center; z-index: 1000; position: fixed; border-bottom: 2px solid black; box-shadow: 0 0 20px black;}
-#topMenu a {color: rgb(160, 160, 160); margin: 0  0 0 10%; line-height: 50px; display: inline-block;}
-#topMenu #crumbtrailContainer a {line-height: 40px; margin: 0;}
+#topMenu {width: 100%; background-color: rgb(20, 20, 20); text-align: center; z-index: 1000; position: fixed; border-bottom: 2px solid black; box-shadow: 0 0 20px black;}
+#topMenu a {color: rgb(160, 160, 160); margin: 0  0 0 10%; line-height: 70px; display: inline-block;}
 #topMenu a:first-child {margin: 0;}
 #topMenu a:hover {color: rgb(255, 255, 255);}
 #topMenu .active {color: rgb(126, 189, 0)}
 
-.articleInnerContainer {padding: 80px 40px; max-width: 900px; margin: 0 auto; display: table; width: 100%; position: relative;}
+.articleInnerContainer {padding: 40px; max-width: 900px; margin: 0 auto; display: table; width: 100%; position: relative;}
 .backgroundOverlay {background-color: white; background-color: rgba(255, 255, 255, 0.9);}
-.bookCover {float: left; margin: 0 60px 20px 0; height: 300px; box-shadow: 10px 10px 20px black; transform: rotate(-3deg);}
+.bookCover {float: left; margin: 0 40px 20px 0;}
 .bookLinksContainer {padding-top: 40px;}
-.bookList article {border-top: 0;}
-.button {display: inline-block; background: rgb(130, 190, 20); font-family: arial; line-height: 100%; text-shadow: none; text-align: center; padding: 20px 30px; border: 1px solid black; border-radius: 3px; margin-right: 40px; text-align: center; color: black; box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);}
-.button:hover {background-color: rgb(140, 200, 30); box-shadow: 0 0 40px rgba(126, 189, 0, 0.5);}
+.button {display: inline-block; font-family: arial; text-align: center; padding: 20px 30px; border-radius: 3px; margin-right: 40px; text-align: center; color: white; text-shadow: 0 0 5px rgba(27, 69, 2, 0.5); box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); background: rgb(126, 189, 0);}
+.button:hover {opacity: 0.9;}
 .center {display: table; margin: 0 auto;}
 .comments {display: none;}
-.contentFooter, .novelSubTitle {display: block; background-color: rgba(0, 0, 0, 0.6); padding: 3px 20px; margin-bottom: 20px; font-size: 14px;}
+.contentFooter {background-color: rgba(0, 0, 0, 0.6); padding: 3px 20px; margin-bottom: 20px; text-align: right;}
 .date {font-weight: bold; display: table-cell; width: 160px; color: rgb(126, 189, 0);}
 .entityFlash {width: 100%; margin: 0; z-index: 100;}
+.entityFlash a:hover {opacity: 0.9;}
 .entityFlash img {transform: rotate(-3deg); box-shadow: 0 0 20px black; width: 40%; border: 5px solid black; z-index: 100; float: left; margin: 0 120px 30px 50px;}
 .entityFlash .articleInnerContainer {max-width: 1280px;}
 .entityList .newsItem {display: table-cell;}
 .half {width: calc(50% - 30px); display: inline-block; vertical-align: top;}
 .half:first-of-type {margin-right: 60px;}
 .half .youtubeFullWidthContainer {margin: 0;}
-.hasCrumbtrail #container {padding-top: 90px;}
-.icon {font-family: "icomoon"; font-size: 30px; color: rgb(100, 100, 100); margin: 30px 60px 30px 0; display: inline-block; transition: all 200ms;}
-.icon:before {margin-right: 10px;}
+.icon {font-family: "icomoon"; font-size: 90px; color: rgb(100, 100, 100); margin: 20px; display: inline-block; transition: all 200ms;}
 .icon:hover {color: rgb(127, 127, 127); text-shadow: 0 0 20px rgba(255, 255, 255, 0.2), 0 0 1px rgb(255, 255, 255);}
 .icon-email:before {content: "\ea83";}
 .icon-facebook:before {content: "\ea8d";}
@@ -86,53 +83,43 @@ p {margin: 0; line-height: 160%; text-shadow: 1px 1px 2px black;}
 .icon-twitter:before {content: "\ea92";}
 .ieOnly {display: none; background-color: red; text-align: center; padding: 10px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.75); font-weight: bold; border: 5px solid rgb(200, 0, 0);}
 .ieOnly a {color: black;}
-.innerContainer {padding: 140px 40px; margin: 0 auto; display: table; max-width: 1500px;}
+.innerContainer {padding: 100px 40px; margin: 0 auto; display: table; max-width: 1500px;}
 .innerContainer .articleInnerContainer {padding: 0;}
 .insertComment {display: none; margin-top: 20px; background-color: rgb(100, 100, 100); background-color: rgba(100, 100, 100, 0.2); padding: 0 20px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.75);}
 .insertComment label {display: inline-block; padding: 10px 0 5px 0;}
 .insertComment input, .insertComment textarea {width: 100%; background-color: rgb(100, 100, 100); background-color: rgba(100, 100, 100, 0.3); border: 2px solid rgb(100, 100, 100); border: 2px solid rgba(100, 100, 100, 0.4); padding: 10px 20px; color: rgb(255, 255, 255); font-size: 16px;}
 .insertComment textarea {height: 100px;}
-.latestEntity {background: rgb(2, 33, 37); transform: translateZ(0); padding: 60px 0 140px 0; border-top: 20px solid black; background-size: cover; background-position: center;}
-.latestEntity article {border-top: 0;}
+.latestEntity {background: rgb(2, 33, 37); transform: translateZ(0); padding-bottom: 40px; background-size: cover; background-position: center;}
 .marginTop {margin-top: 40px;}
 .metaData {margin-bottom: 20px; color: rgb(255, 255, 255);}
 .metaData span {color: rgb(150, 150, 150);}
-.narrowContainer {max-width: 720px; margin: 0 auto;}
-.narrowContainer p {text-indent: 40px;}
-.newsImage {width: 260px; height: 260px; display: block; background-size: 100%; background-size: cover; background-position: center; float: left; margin: 0 20px 10px 0;}
+.newsImage {width: 250px; height: 250px; display: block; background-size: 100%; background-size: cover; background-position: center; float: left; margin-right: 20px;}
 .newsLink {display: table-row; line-height: 30px; color: white;}
 .newsLink:hover {color: orange;}
-.newsList {border-top: 20px solid black; color: white; background-size: cover; background-position: center; z-index: 1; position: relative; transform: translateZ(0);}
+.newsList {border-top: 20px solid black; color: white; background-size: cover; z-index: 1; position: relative; transform: translateZ(0);}
 .newsList .backgroundOverlay {background-color: rgba(145, 100, 60, 0.85);}
-.novexxxlSubTitle {margin: -20px 0 20px 0; display: block; padding-left: 20px; color: rgb(100, 100, 100); font-weight: bold; font-family: arial; background-color: rgba(0, 0, 0, 0.75); padding: 5px; font-size: 75%;}
 .oneThird {width: 33%; display: inline-block; vertical-align: top;}
 .parallax {perspective: 1px; height: 100vh; overflow-x: hidden; overflow-y: auto;}
 .parallaxGroup {position: relative; height: 800px; transform-style: preserve-3d;}
 .parallaxLayer {position: absolute; top: 0; right: 0; bottom: 0; left: 0;}
 .parallaxLayerDepth0 {transform: translateZ(0);}
-.parallaxLayerDepth1 {transform: translateZ(-1px) scale(2) translateY(-10px);}
+.parallaxLayerDepth1 {transform: translateZ(-1px) scale(2);}
 .parallaxLayerDepth2 {transform: translateZ(-3px) scale(4);}
 .parallaxLayerDepth3 {transform: translateZ(-6px) scale(7);}
-.parallaxLayerDepth4 {transform: translateZ(-9px) scale(10) translateY(-20px);}
+.parallaxLayerDepth4 {transform: translateZ(-9px) scale(10) translateY(-5px);}
 .signature {font-size: 110%; text-align: right; display: block; margin-top: 20px; font-style: italic;}
-.soundtrack h2 {margin-top: 50px;}
-.soundtrack iframe {width: 40%; margin: 0 40px 20px 0; border: 0; box-shadow: 5px 5px 10px black; background-color: black; height: 410px; float: left;}
-.source {display: block; text-align: right; margin-top: 10px; font-family: monospace; font-size: 20px;}
+.source {display: block; text-align: right; margin-top: 10px; font-family: monospace;}
 .splashBackground {background-size: cover; background-position: center;}
 .splashDescription {width: calc(50% - 30px); display: inline-block; vertical-align: top; text-shadow: 0 0 6px rgb(0, 0, 0);}
 .splashMedia {width: calc(50% - 30px); display: inline-block; vertical-align: top; margin-left: 30px;}
 .splashMedia iframe {height: 312px; margin: 0; border: 2px solid black; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.95);}
-.textDivider {display: block; height: 6px; width: 100px; border-top: 1px solid white; border-bottom: 1px solid white; margin: 40px auto;}
-.twoThirds {width: calc(66% - 60px); margin-right: 60px; display: inline-block; vertical-align: top;}
+.twoThirds {  width: calc(66% - 60px); margin-right: 60px; display: inline-block; vertical-align: top;}
 .youTube {transform: translateZ(0);}
 .youTube .innerContainer {max-width: 1280px;}
 .youtubeFullWidthContainer {position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden; background-color: rgba(255, 0, 0, 0.35); margin: 40px 0;}
 .youtubeFullWidthContainer iframe {margin: 0; position: absolute; top: 0; left: 0; width: 100%; height: 100%;}
 
 @media screen and (max-width: 1280px){
-	body {font-size: 100%;}
-	header .innerContainer {max-width: 1000px;}
-	.articleInnerContainer, .innerContainer, .youTube .innerContainer {max-width: 800px;}
 	.entityFlash img {margin-right: 50px;}
 }
 @media screen and (max-width: 1000px){
@@ -141,7 +128,7 @@ p {margin: 0; line-height: 160%; text-shadow: 1px 1px 2px black;}
 }
 
 @media screen and (max-width: 720px){
-	header:first-of-type h2 {font-size: 27px; line-height: 35px; margin-bottom: 20px;}
+	header:first-of-type h2 {font-size: 27px; line-height: 30px; margin-bottom: 20px;}
 	.entityFlash img {margin-left: 0;}
 	.greyBox {padding: 20px; border-radius: 3px;}
 	.half {
@@ -154,16 +141,13 @@ p {margin: 0; line-height: 160%; text-shadow: 1px 1px 2px black;}
 	a {font-weight: bold;}
 	blockquote, header:first-of-type blockquote {font-size: 20px; line-height: 30px; width: 80%;}
 	body {font-size: 18px;}
-	footer .innerContainer {padding: 20px; text-align: left;}
-	h1 {margin: 0 0 20px 0; font-size: 25px; line-height: 35px; text-align: center;}
-	h2 {font-size: 25px; line-height: 35px; text-align: center;}
+	footer .innerContainer {padding: 20px;}
+	h1 {margin: 20px 0 40px 0; font-size: 35px; line-height: 35px; text-align: center;}
+	h2 {font-size:25px; line-height: 30px; text-align: center;}
 	header:first-of-type .innerContainer {padding: 10% 20px;}
 	header .innerContainer {max-width: 1280px; padding: 10% 20px;}
-	
 	#moreNews {margin-top: 20px;}
-	
 	.articleInnerContainer {padding: 20px;}
-	.bookCover {margin: 0 0 40px 0; width: 100%; height: auto; box-shadow: 10px 10px 20px black; transform: rotate(0);}
 	.button {width: 100%; margin-bottom: 30px; margin-right: 0; padding: 20px;}
 	.center {display: block;}
 	.contentFooter {text-align: center; padding: 3px 20px;}
@@ -171,7 +155,7 @@ p {margin: 0; line-height: 160%; text-shadow: 1px 1px 2px black;}
 	.entityFlash img {transform: rotate(0); width: 100%; margin: 0 0 40px 0;}
 	.entityList .newsItem {display: inline;}
 	.greyBox {padding: 0; background: none;}
-	.icon {margin: 20px 0; display: block;}
+	.icon {font-size: 80px;}
 	.innerContainer {padding: 40px 20px;}
 	.latestEntity {padding-bottom: 20px;}
 	.latestEntity .center {padding: 0 20px;}
@@ -180,6 +164,5 @@ p {margin: 0; line-height: 160%; text-shadow: 1px 1px 2px black;}
 	.marginTop {margin-top: 20px;}
 	.newsLink {display: block; line-height: 20px; color: white; padding:0; margin-bottom: 20px;}
 	.newsLink:hover {background-color: rgba(0, 0, 0, 0.5);}
-	.parallaxGroup {height: 800px;}
 	.youtubeFullWidthContainer {display: none;}
 }

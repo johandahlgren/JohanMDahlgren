@@ -1,6 +1,3 @@
-/* jslint browser:true */
-/* global $ */
-
 var animationSpeed 		= 200;
 var useParallax			= false;
 var disqusUrl 			= "http://www.dahlgren.tv/johan/boksiten/index.php?entityId=" + pageEntityId;
@@ -12,6 +9,7 @@ var topMenuSelection;
 $(document).ready(function () {
 	$("li.active").parents("li").addClass("active");
 
+	/*
 	var stickyNavTop = $("#topMenu").offset().top;
 
 	var stickyNav = function(){
@@ -29,6 +27,7 @@ $(document).ready(function () {
 	$(window).scroll(function() {
 	    stickyNav();
 	});
+	*/
 
 	$(".discussionToggle").click(function() {
 		var itemIdentifier = $(this).attr("data-id");
@@ -61,12 +60,12 @@ $(document).ready(function () {
 	    $(this).siblings(".discussionDiv").slideToggle(animationSpeed);
 	});
 
-	if ($(".crumbtrailContainer").children("a").length == 0) {
+	if ($(".crumbtrailContainer").children("a").length === 0) {
 		$(".crumbtrailContainer").hide();
 	}
 
 	$(".shareLink").click(function (e) {
-		e.preventDefault;
+		e.preventDefault();
 		$("#overlay").show();
 		$("#shareDiv").fadeIn(animationSpeed);
 		$("#shareDiv").load($(this).attr("href"));
@@ -82,7 +81,7 @@ $(document).ready(function () {
 		useCanvasBackground = false;
 	}
 
-    if (topMenuSelection != "") {
+    if (topMenuSelection !== "") {
         $(topMenuSelection).addClass("active");
     }
 
@@ -133,7 +132,7 @@ function postComment(entityId) {
     var commenterName   = $("#commenterName" + entityId).val();
     var commentText     = $("#commentText" + entityId).val();
 
-    if (commenterName != "" && commentText != "") {
+    if (commenterName !== "" && commentText !== "") {
         $.ajax({
             url: "cms/ajaxService.php",
             data: {

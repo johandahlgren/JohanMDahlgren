@@ -37,10 +37,12 @@
 					</author>
 					<content type="html">
 						<![CDATA[
-							<?php if (getValueFromString("Image", $data) != null) { ?>
-								<img src="<?= getValueFromString("Image", $data) ?>" />
-							<?php } ?>
-							<?=  strip_tags(formatText(getValueFromString("Text", $data))) ?>
+							<p>
+								<?php if (getValueFromString("Image", $data) != null) { ?>
+									<img src="<?= getValueFromString("Image", $data) ?>" />
+								<?php } ?>
+								<?=  formatText(getValueFromString("Text", $data)) ?>
+							</p>
 						]]>
 					</content>
 					<?php

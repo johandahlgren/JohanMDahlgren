@@ -72,7 +72,7 @@
 			<label for="name">State</label>
 			<select id="state" name="state">
 				<option value="working">Working</option>
-				<option value="active">Active</option>
+				<option value="active" selected="1">Active</option>
 			</select>
 			<div class="customFields">
 				<?php
